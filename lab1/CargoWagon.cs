@@ -39,7 +39,6 @@ namespace lab1
             ResourceType = resource;
             loadPercentage = loadPercentage > 100? 100 : loadPercentage < 0 ? 0 : loadPercentage;
             Weight += Payload * loadPercentage / 100d;
-            
         }
     }
 }
