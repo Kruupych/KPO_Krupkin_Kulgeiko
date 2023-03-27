@@ -27,8 +27,7 @@ namespace lab1
         }
 
         public void Unload()
-        {
-            
+        {            
             Weight = EmptyWeight;
         }
 
@@ -37,7 +36,6 @@ namespace lab1
             count = count > Payload ? Payload : count < 0 ? 0 : count;
             //loadPercentage = loadPercentage > 100 ? 100 : loadPercentage < 0 ? 0 : loadPercentage;
             Weight += count*0.07d;
-
         }
     }
 }
