@@ -18,6 +18,14 @@
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
+  <Class Name="lab1.PassengerWagon">
+    <Position X="9.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgACEAAAAAAAAAAAQAABIACAAAAgAAAAAAAAAAAA=</HashCode>
+      <FileName>PassengerWagon.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
   <Interface Name="lab1.IWagon">
     <Position X="1.5" Y="1" Width="1.5" />
     <TypeIdentifier>
@@ -26,7 +34,7 @@
     </TypeIdentifier>
   </Interface>
   <Interface Name="lab1.ILocomotive">
-    <Position X="3.75" Y="1" Width="1.5" />
+    <Position X="3.5" Y="1" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAEAAAAABAACAAAAABAAAAAAAAAAA=</HashCode>
       <FileName>ILocomotive.cs</FileName>
