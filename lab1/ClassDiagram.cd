@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="lab1.CargoWagon">
+    <Position X="7.5" Y="2" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Enum Name="lab1.CargoWagon.Resource" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>CargoWagon.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAgACEAAAAAAAAAAAQQABIACAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CargoWagon.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="lab1.IWagon">
+    <Position X="1.5" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAAAAAAAAAAAAABIACAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IWagon.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="lab1.ILocomotive">
+    <Position X="3.75" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAEAAAAABAACAAAAABAAAAAAAAAAA=</HashCode>
+      <FileName>ILocomotive.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
