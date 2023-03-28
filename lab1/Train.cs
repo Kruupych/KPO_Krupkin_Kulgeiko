@@ -21,7 +21,7 @@ namespace lab1
             RecalculateWeight();
         }
 
-        public Train(ILocomotive locomotive, ICollection<IWagon> wagons) : this(locomotive)
+        public Train(ILocomotive locomotive, IEnumerable<IWagon> wagons) : this(locomotive)
         {
             AddWagons(wagons);
         }
@@ -32,7 +32,7 @@ namespace lab1
             RecalculateWeight();
         }
 
-        public void AddWagons(ICollection<IWagon> wagons)
+        public void AddWagons(IEnumerable<IWagon> wagons)
         {
             foreach (var wagon in wagons)
             {

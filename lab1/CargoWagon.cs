@@ -9,7 +9,7 @@ namespace lab1
     {
         public enum Resource
         {
-            Empty, Coal, Wood, AgroCombine, Fuel, Animals
+            Nothing, Coal, Wood, AgroCombine, Fuel, Animals
         }
 
         public double Length { get; private set; }
@@ -30,7 +30,7 @@ namespace lab1
 
         public void Unload()
         {
-            ResourceType = Resource.Empty;
+            ResourceType = Resource.Nothing;
             Weight = EmptyWeight;
         }
 
@@ -39,6 +39,13 @@ namespace lab1
             ResourceType = resource;
             loadPercentage = loadPercentage > 100? 100 : loadPercentage < 0 ? 0 : loadPercentage;
             Weight += Payload * loadPercentage / 100d;
+        }
+
+        public override string ToString()
+        {
+            return $"Грузовой вагон, везущий {ResourceType.ToString()}" +
+                $"\nДлина: {Length} метров" +
+                $"\nВес: {Weight.ToString("f2")} тонн";
         }
     }
 }
