@@ -12,8 +12,6 @@ namespace lab1
         public double Weight { get; private set; }
         public bool IsElectric { get; private set; }
 
-
-
         public DieselLocomotive(double length, double power, double weight)
         {
             Length = length;
@@ -25,6 +23,11 @@ namespace lab1
         public double CalculateMaxSpeed(double totalWeight)
         {
             return Power / totalWeight * 24d;
+        }
+
+        public static double CalculateMaxSpeed(double totalWeight, double power)
+        {
+            return power / totalWeight * 24d;
         }
     }
 }

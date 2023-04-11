@@ -18,6 +18,8 @@ namespace lab1
         public double Weight { get; private set; }
         public double Payload { get; private set; }
         public Resource ResourceType { get; private set; }
+        public static int TotalCount { get; private set; }
+
 
         public CargoWagon(double length, double emptyWeight, double payload)
         {
@@ -26,7 +28,13 @@ namespace lab1
             IsPassenger = false;
             Weight = emptyWeight;
             Payload = payload;
-        } 
+            TotalCount++;
+        }
+
+        static CargoWagon()
+        {
+            TotalCount = 0;
+        }
 
         public void Unload()
         {

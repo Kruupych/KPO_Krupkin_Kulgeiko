@@ -12,6 +12,7 @@ namespace lab1
         public double EmptyWeight { get; private set; }
         public double Weight { get; private set; }
         public int Payload { get; private set; }
+        public static int TotalCount { get; private set; }
 
         public PassengerWagon(double length, double emptyWeight, int maxPassengers)
         {
@@ -20,6 +21,12 @@ namespace lab1
             IsPassenger = false;
             Weight = emptyWeight;
             Payload = maxPassengers;
+            TotalCount++;
+        }
+
+        static PassengerWagon()
+        {
+            TotalCount = 0;
         }
 
         public void Unload()

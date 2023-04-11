@@ -11,5 +11,6 @@ namespace lab1
         public bool IsPassenger { get; }
         public double EmptyWeight { get; }
         public double Weight { get; }
+        public static int TotalCount { get; }
     }
 } 
