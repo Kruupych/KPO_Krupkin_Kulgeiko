@@ -1,24 +1,39 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="lab1.CargoWagon">
+  <Class Name="RailwayTransport.CargoWagon">
     <Position X="2.25" Y="0.5" Width="1.5" />
     <Compartments>
       <Compartment Name="Nested Types" Collapsed="false" />
     </Compartments>
     <NestedTypes>
-      <Enum Name="lab1.CargoWagon.Resource" Collapsed="true">
+      <Enum Name="RailwayTransport.CargoWagon.Resource" Collapsed="true">
         <TypeIdentifier>
           <NewMemberFileName>CargoWagon.cs</NewMemberFileName>
         </TypeIdentifier>
       </Enum>
     </NestedTypes>
     <TypeIdentifier>
-      <HashCode>AAAAgACEAAAAAAAEAAAQQABIACAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAgACEAAAABAAEAAAQQABIACAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>CargoWagon.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="lab1.DieselLocomotive">
+  <Class Name="RailwayTransport.PassengerWagon">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgACEAAAABAAAAAAQAABIACAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>PassengerWagon.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="RailwayTransport.Train">
+    <Position X="8.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQgAAAAAAAEAAAAAEAABAgAAAAAgAEAAAAAAAAIA=</HashCode>
+      <FileName>Train.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RailwayTransport.DieselLocomotive">
     <Position X="2.25" Y="5.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AIAAAAAAAAAAAAAAEAAAAABAACAAAAABAAAAAAAAAAA=</HashCode>
@@ -26,29 +41,28 @@
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="lab1.PassengerWagon">
-    <Position X="4" Y="0.5" Width="1.5" />
+  <Class Name="RailwayTransport.Controller.TrainCreator" Collapsed="true">
+    <Position X="8.5" Y="5.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAgACEAAAAAAAAAAAQAABIACAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>PassengerWagon.cs</FileName>
-    </TypeIdentifier>
-    <Lollipop Position="0.2" />
-  </Class>
-  <Class Name="lab1.Train">
-    <Position X="8.5" Y="0.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAQgAAAAAAAEAAAAAEAABAgAAAAAgAEAAAAAAAAIA=</HashCode>
-      <FileName>Train.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controller\TrainCreator.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Interface Name="lab1.IWagon">
+  <Class Name="RailwayTransport.View.TrainInfoView" Collapsed="true">
+    <Position X="10.25" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>View\TrainInfoView.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="RailwayTransport.IWagon">
     <Position X="0.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAEAAAAAAAAAAAAAABIACAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAEAAAABAAAAAAAAABIACAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>IWagon.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="lab1.ILocomotive">
+  <Interface Name="RailwayTransport.ILocomotive">
     <Position X="0.5" Y="5.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AIAAAAAAAAAAAAAAEAAAAABAACAAAAABAAAAAAAAAAA=</HashCode>
