@@ -41,17 +41,17 @@
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="RailwayTransport.Controller.TrainCreator" Collapsed="true">
+  <Class Name="RailwayTransport.Controller.TrainCreator">
     <Position X="8.5" Y="5.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAIQAAAAAAIAAAAAQAAAAA=</HashCode>
       <FileName>Controller\TrainCreator.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="RailwayTransport.View.TrainInfoView" Collapsed="true">
+  <Class Name="RailwayTransport.View.TrainInfoView">
     <Position X="10.25" Y="5.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>View\TrainInfoView.cs</FileName>
     </TypeIdentifier>
   </Class>

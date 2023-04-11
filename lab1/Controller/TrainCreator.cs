@@ -10,6 +10,8 @@ namespace RailwayTransport.Controller
     {
         public static List<CargoWagon> CreateWagons(int count)
         {
+            count = count < 1 ? 1 : count;
+
             List<CargoWagon> cargoWagons = new();
             Random random = new Random();
 
@@ -47,6 +49,8 @@ namespace RailwayTransport.Controller
 
         public static Train CreateTrain(int wagonsCount)
         {
+            wagonsCount = wagonsCount > 100? 100 : wagonsCount;
+
             var locomotive = CreateDieselLocomotive();
             var wagons = CreateWagons(wagonsCount);
 
