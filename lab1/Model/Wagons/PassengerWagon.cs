@@ -59,5 +59,10 @@ namespace RailwayTransport
             passengersCount = passengersCount > Payload ? Payload : passengersCount < 0 ? 0 : passengersCount;
             Weight += passengersCount * 0.07d;
         }
+
+        ~PassengerWagon()
+        {
+            TotalCount--;
+        }
     }
 }
