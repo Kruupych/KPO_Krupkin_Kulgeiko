@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace lab1
+namespace RailwayTransport
 {
     public class PassengerWagon : IWagon
     {
@@ -29,7 +29,7 @@ namespace lab1
             Length = 25.0;
             EmptyWeight = 56.0;
             IsPassenger = true;
-            Weight = emptyWeight;
+            Weight = EmptyWeight;
             Payload = 64;
             TotalCount++;
         }
