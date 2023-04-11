@@ -18,9 +18,29 @@ namespace lab1
         {
             Length = length;
             EmptyWeight = emptyWeight;
-            IsPassenger = false;
+            IsPassenger = true;
             Weight = emptyWeight;
             Payload = maxPassengers;
+            TotalCount++;
+        }
+
+        public PassengerWagon()
+        {
+            Length = 25.0;
+            EmptyWeight = 56.0;
+            IsPassenger = true;
+            Weight = emptyWeight;
+            Payload = 64;
+            TotalCount++;
+        }
+
+        public PassengerWagon(PassengerWagon wagon)
+        {
+            Length = wagon.Length ;
+            EmptyWeight = wagon.EmptyWeight;
+            IsPassenger = wagon.IsPassenger;
+            Weight = wagon.Weight;
+            Payload = wagon.Payload;
             TotalCount++;
         }
 

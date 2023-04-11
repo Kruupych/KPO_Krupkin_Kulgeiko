@@ -20,6 +20,22 @@ namespace lab1
             IsElectric = false;
         }
 
+        public DieselLocomotive()
+        {
+            Length = 13.5;
+            Power = 7500;
+            Weight = 100;
+            IsElectric = false;
+        }
+
+        public DieselLocomotive(DieselLocomotive locomotive)
+        {
+            Length = locomotive.Length;
+            Power = locomotive.Power;
+            Weight = locomotive.Weight;
+            IsElectric = locomotive.IsElectric;
+        }
+
         public double CalculateMaxSpeed(double totalWeight)
         {
             return Power / totalWeight * 24d;
