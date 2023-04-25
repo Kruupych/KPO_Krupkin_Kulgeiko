@@ -10,7 +10,10 @@ namespace RailwayTransport.Controller
     {
         public static List<CargoWagon> CreateWagons(int count)
         {
-            count = count < 1 ? 1 : count;
+            if (count < 1)
+            {
+                throw new ArgumentOutOfRangeException();
+            }
 
             List<CargoWagon> cargoWagons = new();
             Random random = new Random();
@@ -59,7 +62,7 @@ namespace RailwayTransport.Controller
 
         public static Train CreateTrain(DieselLocomotive locomotive, IEnumerable<IWagon> wagons)
         {
-            return CreateTrain(locomotive, wagons);
+            return new Train(locomotive, wagons);
         }
     }
 }

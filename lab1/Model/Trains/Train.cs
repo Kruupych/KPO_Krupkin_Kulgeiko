@@ -13,6 +13,7 @@ namespace RailwayTransport
         public double TotalWeight { get; private set; }
         public double Length { get => GetTotalLength(); }
         public double MaxSpeed { get => _locomotive.CalculateMaxSpeed(TotalWeight); }
+        public List<IWagon> Wagons { get => _wagonList; }
 
         public Train(ILocomotive locomotive)
         {
