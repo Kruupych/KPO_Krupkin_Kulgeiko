@@ -14,7 +14,7 @@
     </NestedTypes>
     <TypeIdentifier>
       <HashCode>AAAAgACEAAAABAAEAAAQQABIACAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>CargoWagon.cs</FileName>
+      <FileName>Model\Wagons\CargoWagon.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
@@ -22,22 +22,22 @@
     <Position X="4" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAgACEAAAABAAAAAAQAABIACAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>PassengerWagon.cs</FileName>
+      <FileName>Model\Wagons\PassengerWagon.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="RailwayTransport.Train">
     <Position X="8.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAQgAAAAAAAEAAAAAEAABAgAAAAAgAEAAAAAAAAIA=</HashCode>
-      <FileName>Train.cs</FileName>
+      <HashCode>AAACQgAAAAAAAEAAAAAEAABAgAAAAAgAEAAAAAAAAIA=</HashCode>
+      <FileName>Model\Trains\Train.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="RailwayTransport.DieselLocomotive">
     <Position X="2.25" Y="5.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AIAAAAAAAAAAAAAAEAAAAABAACAAAAABAAAAAAAAAAA=</HashCode>
-      <FileName>DieselLocomotive.cs</FileName>
+      <FileName>Model\Locomotives\DieselLocomotive.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
@@ -55,18 +55,25 @@
       <FileName>View\TrainInfoView.cs</FileName>
     </TypeIdentifier>
   </Class>
+  <Class Name="RailwayTransport.Depo">
+    <Position X="5.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAACAAAAAAAAACAAQAAQAAAAAAABAkABAAAEAIAAAAA=</HashCode>
+      <FileName>Model\Depo\Depo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
   <Interface Name="RailwayTransport.IWagon">
     <Position X="0.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAEAAAABAAAAAAAAABIACAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>IWagon.cs</FileName>
+      <FileName>Model\Wagons\IWagon.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="RailwayTransport.ILocomotive">
     <Position X="0.5" Y="5.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AIAAAAAAAAAAAAAAEAAAAABAACAAAAABAAAAAAAAAAA=</HashCode>
-      <FileName>ILocomotive.cs</FileName>
+      <FileName>Model\Locomotives\ILocomotive.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Font Name="Segoe UI" Size="9" />

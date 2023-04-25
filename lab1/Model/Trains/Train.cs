@@ -29,6 +29,11 @@ namespace RailwayTransport
 
         public void AddWagon(IWagon wagon)
         {
+            if (wagon == null)
+            {
+                throw new ArgumentNullException();
+            }
+
             _wagonList.Add(wagon);
             RecalculateWeight();
         }

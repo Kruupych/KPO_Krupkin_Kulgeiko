@@ -8,55 +8,60 @@ namespace RailwayTransport
 {
     public class Depo
     {
-        List<Train> _trainList;        
-        public int MaxCapacity { get; private set; }       
+        private List<Train> _trainList;
 
-        public Depo(int cap)
+        public int MaxCapacity { get; private set; }   
+        public List<Train> Trains { get => _trainList; }
+
+        public Depo(int maxCapacity)
         {
-            MaxCapacity = cap;
+            MaxCapacity = maxCapacity;
             _trainList = new List<Train>();
         }
 
-        public void AddTrain(Train train)
+        public Train this[int index]
+        {
+            get => _trainList[index];
+            private set => _trainList[index] = value;
+        }
+
+        public bool AddTrain(Train train)
         {
             if (_trainList.Count < MaxCapacity)
             {
-                _trainList.Add(train);                
+                _trainList.Add(train);
+                return true;
             }
+
+            return false;
         }
 
-        public void RemoveTrain(Train train)
+        public bool RemoveTrain(Train train)
         {
-            if (_trainList.Contains(train))
-            {
-                _trainList.Remove(train);
-            }
+            return _trainList.Remove(train);
         }
-        public void ShowTime()
-        {
-           foreach(Train tr in _trainList)
-            {
-                Console.WriteLine(tr.Length + " " + tr.TotalWeight + " " + tr.MaxSpeed);
-            }
-        }
+
         public Depo SortByWeight()
         {
             
             _trainList.Sort((x, y) => x.TotalWeight.CompareTo(y.TotalWeight));
             return this;
         }
+
         public Depo SortBySpeed()
         {
             
             _trainList.Sort((x, y) => x.MaxSpeed.CompareTo(y.MaxSpeed));
             return this;
         }
+
         public Depo SortByLength()
         {
             
             _trainList.Sort((x, y) => x.Length.CompareTo(y.Length));
             return this;
         }
+
         public Train FindTrainBySpeed(bool IsSmallest)
         {
             if(_trainList== null)
@@ -74,6 +79,7 @@ namespace RailwayTransport
                 return _trainList.Find(p => p.MaxSpeed == maxm);
             }
         }
+
         public Train FindTrainByWeight(bool IsSmallest)
         {
             if (_trainList == null)
@@ -91,6 +97,7 @@ namespace RailwayTransport
                 return _trainList.Find(p => p.TotalWeight == maxm);
             }
         }
+
         public Train FindTrainByLength(bool IsSmallest)
         {
             if (_trainList == null)
@@ -152,6 +159,11 @@ namespace RailwayTransport
             {
                 return _trainList.FindAll(p => p.Length < value);
             }
+        }
+
+        public List<Train> FindAll(Predicate<Train> match)
+        {
+            return _trainList.FindAll(match);
         }
     }
 }
