@@ -31,6 +31,8 @@ namespace RailwayTransport
 
             Console.WriteLine("\n\n\t---Сортировка по весу:---\n");
             TrainInfoView.ShowDepoInfo(depo.SortByWeight());
+
+            Console.ReadKey();
         }
     }
 }

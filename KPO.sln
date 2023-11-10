@@ -5,7 +5,14 @@ VisualStudioVersion = 17.2.32630.192
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RailwayTransport", "lab1\RailwayTransport.csproj", "{102E07EA-3AA7-4D9A-A061-F8C99CE24200}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RailwayTransport.Tests", "RailwayTransport.Tests\RailwayTransport.Tests.csproj", "{03E72416-4675-43BC-917A-44A7F4202EE9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RailwayTransport.Tests", "RailwayTransport.Tests\RailwayTransport.Tests.csproj", "{03E72416-4675-43BC-917A-44A7F4202EE9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Элементы решения", "Элементы решения", "{26560F6D-F0CC-42F1-9339-809475BAFBA0}"
+	ProjectSection(SolutionItems) = preProject
+		ОТЧЕТ_1-6.docx = ОТЧЕТ_1-6.docx
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Locomotive", "Locomotive\Locomotive.csproj", "{3C0F6614-2AF1-4E9B-A405-BCF7B2A036B1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +28,10 @@ Global
 		{03E72416-4675-43BC-917A-44A7F4202EE9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{03E72416-4675-43BC-917A-44A7F4202EE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{03E72416-4675-43BC-917A-44A7F4202EE9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C0F6614-2AF1-4E9B-A405-BCF7B2A036B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C0F6614-2AF1-4E9B-A405-BCF7B2A036B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C0F6614-2AF1-4E9B-A405-BCF7B2A036B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C0F6614-2AF1-4E9B-A405-BCF7B2A036B1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
