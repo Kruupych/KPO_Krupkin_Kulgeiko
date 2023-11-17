@@ -41,12 +41,12 @@ namespace RailwayTransport
 
             var json = JsonConvert.SerializeObject(_trainList, Formatting.Indented, new JsonSerializerSettings() { TypeNameHandling = TypeNameHandling.Auto});
             
-            File.WriteAllText(@$"{fileName}.json", json);
+            File.WriteAllText($"json/{fileName}.json", json);
         }
 
         public void DeserializeTrains(string fileName)
         {
-            var json = File.ReadAllText(@$"{fileName}.json");
+            var json = File.ReadAllText($"json/{fileName}.json");
 
             _trainList = JsonConvert.DeserializeObject<List<Train>>(json, new JsonSerializerSettings() { TypeNameHandling = TypeNameHandling.Auto });
 
