@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Locomotive;
+using Newtonsoft.Json;
 
 namespace RailwayTransport
 {
@@ -16,6 +17,8 @@ namespace RailwayTransport
         public double MaxSpeed { get => _locomotive.CalculateMaxSpeed(TotalWeight); }
         public List<IWagon> Wagons { get => _wagonList; }
 
+        public ILocomotive Locomotive { get => _locomotive; }
+
         public Train(ILocomotive locomotive)
         {
             _locomotive = locomotive;
@@ -23,6 +26,7 @@ namespace RailwayTransport
             RecalculateWeight();
         }
 
+        [JsonConstructor]
         public Train(ILocomotive locomotive, IEnumerable<IWagon> wagons) : this(locomotive)
         {
             AddWagons(wagons);

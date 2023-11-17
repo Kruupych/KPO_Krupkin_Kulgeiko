@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace RailwayTransport
 {
@@ -32,6 +33,7 @@ namespace RailwayTransport
             TotalCount++;
         }
 
+        [JsonConstructor]
         public CargoWagon(double length, double emptyWeight, double payload)
         {
             Length = length;

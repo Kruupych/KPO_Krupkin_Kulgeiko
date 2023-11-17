@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,10 +20,40 @@ namespace RailwayTransport
             _trainList = new List<Train>();
         }
 
+        public Depo(List<Train> trainList, int maxCapacity)
+        {
+            _trainList = trainList;
+            MaxCapacity = maxCapacity;
+        }
+
         public Train this[int index]
         {
             get => _trainList[index];
             private set => _trainList[index] = value;
+        }
+
+        public void SerializeTrains(string fileName)
+        {
+            if (_trainList.Count == 0)
+            {
+                return;
+            }
+
+            var json = JsonConvert.SerializeObject(_trainList, Formatting.Indented, new JsonSerializerSettings() { TypeNameHandling = TypeNameHandling.Auto});
+            
+            File.WriteAllText(@$"{fileName}.json", json);
+        }
+
+        public void DeserializeTrains(string fileName)
+        {
+            var json = File.ReadAllText(@$"{fileName}.json");
+
+            _trainList = JsonConvert.DeserializeObject<List<Train>>(json, new JsonSerializerSettings() { TypeNameHandling = TypeNameHandling.Auto });
+
+            if (_trainList?.Count > MaxCapacity)
+            {
+                MaxCapacity = _trainList.Count;
+            }
         }
 
         public bool AddTrain(Train train)

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,6 +15,7 @@ namespace RailwayTransport
         public int Payload { get; private set; }
         public static int TotalCount { get; private set; }
 
+        [JsonConstructor]
         public PassengerWagon(double length, double emptyWeight, int maxPassengers)
         {
             Length = length;

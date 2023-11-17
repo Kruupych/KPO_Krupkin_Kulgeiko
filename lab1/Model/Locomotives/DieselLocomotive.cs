@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Locomotive;
+using Newtonsoft.Json;
 
 namespace RailwayTransport
 {
@@ -13,6 +14,7 @@ namespace RailwayTransport
         public double Weight { get; private set; }
         public bool IsElectric { get; private set; }
 
+        [JsonConstructor]
         public DieselLocomotive(double length, double power, double weight)
         {
             Length = length;

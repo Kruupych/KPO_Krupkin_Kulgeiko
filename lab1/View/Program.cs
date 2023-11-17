@@ -14,11 +14,17 @@ namespace RailwayTransport
             var train4 = TrainCreator.CreateTrain(wagonsCount: 8);
 
             Depo depo = new Depo(5);
-            depo.AddTrain(train0);
-            depo.AddTrain(train1);
-            depo.AddTrain(train2);
-            depo.AddTrain(train3);
-            depo.AddTrain(train4);
+            depo.DeserializeTrains("test");
+
+            //depo.AddTrain(train0);
+            //depo.AddTrain(train1);
+            //depo.AddTrain(train2);
+            //depo.AddTrain(train3);
+            //depo.AddTrain(train4);
+            //depo.SerializeTrains("test");
+
+
+
 
             Console.WriteLine("\n\t---До сортировки:---\n");
             TrainInfoView.ShowDepoInfo(depo);
