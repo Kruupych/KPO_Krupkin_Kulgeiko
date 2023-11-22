@@ -27,6 +27,25 @@ namespace RailwayTransport.View
                 ShowTrainInfo(depo[i]);
             }
         }
+
+        public static void ShowTrainInfoWF(Train train, RichTextBox tb)
+        {
+
+            tb.AppendText("\nДлина поезда: " + train.Length + "м");
+            tb.AppendText("\nСамый длинный вагон:\n" + train.FindLongestWagon().ToString());
+            tb.AppendText("\nСамый короткий вагон:\n" + train.FindShortestWagon().ToString());
+            tb.AppendText("\nВес поезда: " + train.TotalWeight.ToString("f2") + " т");
+            tb.AppendText("\nМаксимальная скорость: " + train.MaxSpeed.ToString("f1") + " км/ч");
+        }
+
+        public static void ShowDepoInfoWF(Depo depo, RichTextBox tb)
+        {
+            for (int i = 0; i < depo.Trains.Count; i++)
+            {
+                tb.AppendText($"\n\nПоезд №{i + 1}: \n");
+                ShowTrainInfoWF(depo[i],tb);
+            }
+        }
     }
 
 }

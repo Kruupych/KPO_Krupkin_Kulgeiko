@@ -14,6 +14,9 @@ namespace RailwayTransport
                .WriteTo.File("logs/myapp.txt", rollingInterval: RollingInterval.Day)
                .CreateLogger();
 
+            ViewForm form1 = new ViewForm();
+            
+            form1.ShowDialog();
             var train0 = TrainCreator.CreateTrain(wagonsCount: 30);
             var train1 = TrainCreator.CreateTrain(wagonsCount: 11);
             var train2 = TrainCreator.CreateTrain(wagonsCount: 22);
@@ -45,7 +48,9 @@ namespace RailwayTransport
             Log.Information("\n\n\t---Сортировка по весу:---\n");
             TrainInfoView.ShowDepoInfo(depo.SortByWeight());
 
-            Console.ReadKey();
+            //Console.ReadKey();
+            Console.ReadLine();
+            
         }
     }
 }
