@@ -11,6 +11,7 @@ using Microsoft.VisualBasic.Logging;
 using RailwayTransport.Controller;
 using RailwayTransport.View;
 using Serilog;
+using Log = Serilog.Log;
 
 namespace RailwayTransport.View
 {
@@ -62,16 +63,21 @@ namespace RailwayTransport.View
             {
                 if (comboTrains.Items.Count == 0 || comboDepoes.Items.Count == 0)
                 {
-                    throw new ArgumentException(nameof(comboDepoes));
+                    throw new ArgumentException(nameof(comboDepoes), "Нет поездов или депо");
                 }
                 if (comboTrains.SelectedItem == null || comboDepoes.SelectedItem == null)
                 {
-                    throw new ArgumentNullException(nameof(comboDepoes));
+                    throw new ArgumentNullException(nameof(comboDepoes), "Не выбран поезд или депо");
+                }
+                if (depoes[comboDepoes.SelectedItem.ToString()].Trains.Contains(trains[comboTrains.SelectedItem.ToString()]))
+                {
+                    throw new ArgumentException(nameof(comboDepoes), "Этот поезд уже есть в депо");
                 }
                 depoes[comboDepoes.SelectedItem.ToString()].AddTrain(trains[comboTrains.SelectedItem.ToString()]);
             }
             catch (Exception ex)
             {
+                Log.Information("\n" + this.buttonAddToDepo.Text + " Ошибка: " + ex.Message );
                 MessageBox.Show(ex.Message);
             }
         }
