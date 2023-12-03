@@ -31,7 +31,10 @@ namespace RailwayTransport
         {
             AddWagons(wagons);
         }
-
+        public IWagon GetWagonByIndex(int index)
+        {
+            return _wagonList[index];
+        }
         public void AddWagon(IWagon wagon)
         {
             if (wagon == null)
@@ -42,7 +45,16 @@ namespace RailwayTransport
             _wagonList.Add(wagon);
             RecalculateWeight();
         }
+        public void DelWagon(IWagon wagon)
+        {
+            if (wagon == null)
+            {
+                throw new ArgumentNullException();
+            }
 
+            _wagonList.Remove(wagon);
+            RecalculateWeight();
+        }
         public void AddWagons(IEnumerable<IWagon> wagons)
         {
             foreach (var wagon in wagons)
