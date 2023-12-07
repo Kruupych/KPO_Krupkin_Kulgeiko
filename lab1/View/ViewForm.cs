@@ -141,11 +141,11 @@ namespace RailwayTransport.View
         {
             try
             {
-                if (comboTrains.Items.Count == 0 || comboDepoes.Items.Count == 0)
+                if ( comboDepoes.Items.Count == 0)
                 {
                     throw new ArgumentException(nameof(comboDepoes));
                 }
-                if (comboTrains.SelectedItem == null || comboDepoes.SelectedItem == null)
+                if ( comboDepoes.SelectedItem == null)
                 {
                     throw new ArgumentNullException(nameof(comboDepoes));
                 }

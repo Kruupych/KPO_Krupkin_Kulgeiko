@@ -37,13 +37,16 @@ namespace RailwayTransport
 
             var serializer = new RailwaySerializer("test1");
             var depo = serializer.DeserializeDepo();
-
+            if (depo == null)
+            {
+                var trains = depoController.CreateTrains(5);
+                depo = depoController.CreateDepo(trains);
+                serializer.SerializeDepo(depo);
+            }
             //var trains = depoController.CreateTrains(5);
             //var depo = depoController.CreateDepo(trains);
-
-            
             //serializer.SerializeDepo(depo);
-            
+
             Log.Information("\n\t---До сортировки:---\n");
             depoController.SetPrinter(new FilePrinter($"testPrinter.txt"));
             depoController.PrintDepoInfo(depo);
