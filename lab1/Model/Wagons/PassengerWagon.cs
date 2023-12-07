@@ -15,6 +15,8 @@ namespace RailwayTransport
         public int Payload { get; private set; }
         public static int TotalCount { get; private set; }
 
+        public int PassengersCount => (int)((Weight - EmptyWeight) / 0.07d);
+
         [JsonConstructor]
         public PassengerWagon(double length, double emptyWeight, int maxPassengers)
         {
@@ -60,6 +62,13 @@ namespace RailwayTransport
         {
             passengersCount = passengersCount > Payload ? Payload : passengersCount < 0 ? 0 : passengersCount;
             Weight += passengersCount * 0.07d;
+        }
+
+        public override string ToString()
+        {
+            return $"Пассажирский вагон, везущий {PassengersCount} пассажиров" +
+                $"\nДлина: {Length} метров" +
+                $"\nВес: {Weight.ToString("f2")} тонн";
         }
 
         ~PassengerWagon()

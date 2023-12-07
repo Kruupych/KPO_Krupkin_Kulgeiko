@@ -1,64 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<root>
-  <!--
-    Microsoft ResX Schema 
-
-    Version 2.0
-
-    The primary goals of this format is to allow a simple XML format
-    that is mostly human readable. The generation and parsing of the
-    various data types are done through the TypeConverter classes
-    associated with the data types.
-
-    Example:
-
-    ... ado.net/XML headers & schema ...
-    <resheader name="resmimetype">text/microsoft-resx</resheader>
-    <resheader name="version">2.0</resheader>
-    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
-    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
-    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
-    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
-    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
-        <value>[base64 mime encoded serialized .NET Framework object]</value>
-    </data>
-    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
-        <comment>This is a comment</comment>
-    </data>
-
-    There are any number of "resheader" rows that contain simple
-    name/value pairs.
-
-    Each data row contains a name, and value. The row also contains a
-    type or mimetype. Type corresponds to a .NET class that support
-    text/value conversion through the TypeConverter architecture.
-    Classes that don't support this are serialized and stored with the
-    mimetype set.
-
-    The mimetype is used for serialized objects, and tells the
-    ResXResourceReader how to depersist the object. This is currently not
-    extensible. For a given mimetype the value must be set accordingly:
-
-    Note - application/x-microsoft.net.object.binary.base64 is the format
-    that the ResXResourceWriter will generate, however the reader can
-    read any of the formats listed below.
-
-    mimetype: application/x-microsoft.net.object.binary.base64
-    value   : The object must be serialized with
-            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
-            : and then encoded with base64 encoding.
-    
-    mimetype: application/x-microsoft.net.object.soap.base64
-    value   : The object must be serialized with
-            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
-            : and then encoded with base64 encoding.
-
-    mimetype: application/x-microsoft.net.object.bytearray.base64
-    value   : The object must be serialized into a byte array
-            : using a System.ComponentModel.TypeConverter
-            : and then encoded with base64 encoding.
-    -->
+﻿<root>
   <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
     <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xsd:element name="root" msdata:IsDataSet="true">
@@ -118,6 +58,846 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="comboTrains.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 52</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="comboTrains.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="comboTrains.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 30</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="comboTrains.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;comboTrains.Name" xml:space="preserve">
+    <value>comboTrains</value>
+  </data>
+  <data name="&gt;&gt;comboTrains.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;comboTrains.Parent" xml:space="preserve">
+    <value>groupSelection</value>
+  </data>
+  <data name="&gt;&gt;comboTrains.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="buttonAddTrain.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 30</value>
+  </data>
+  <data name="buttonAddTrain.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="buttonAddTrain.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 30</value>
+  </data>
+  <data name="buttonAddTrain.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="buttonAddTrain.Text" xml:space="preserve">
+    <value>Добавить поезд</value>
+  </data>
+  <data name="&gt;&gt;buttonAddTrain.Name" xml:space="preserve">
+    <value>buttonAddTrain</value>
+  </data>
+  <data name="&gt;&gt;buttonAddTrain.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonAddTrain.Parent" xml:space="preserve">
+    <value>groupCreation</value>
+  </data>
+  <data name="&gt;&gt;buttonAddTrain.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="text_wagon.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 95</value>
+  </data>
+  <data name="text_wagon.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="text_wagon.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 30</value>
+  </data>
+  <data name="text_wagon.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;text_wagon.Name" xml:space="preserve">
+    <value>text_wagon</value>
+  </data>
+  <data name="&gt;&gt;text_wagon.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;text_wagon.Parent" xml:space="preserve">
+    <value>groupCreation</value>
+  </data>
+  <data name="&gt;&gt;text_wagon.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 64</value>
+  </data>
+  <data name="label1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
+  </data>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 22</value>
+  </data>
+  <data name="label1.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Количество вагонов:</value>
+  </data>
+  <data name="&gt;&gt;label1.Name" xml:space="preserve">
+    <value>label1</value>
+  </data>
+  <data name="&gt;&gt;label1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
+    <value>groupCreation</value>
+  </data>
+  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="label2.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>221, 64</value>
+  </data>
+  <data name="label2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
+  </data>
+  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 22</value>
+  </data>
+  <data name="label2.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Количество поездов:</value>
+  </data>
+  <data name="&gt;&gt;label2.Name" xml:space="preserve">
+    <value>label2</value>
+  </data>
+  <data name="&gt;&gt;label2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label2.Parent" xml:space="preserve">
+    <value>groupCreation</value>
+  </data>
+  <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="text_train.Location" type="System.Drawing.Point, System.Drawing">
+    <value>233, 95</value>
+  </data>
+  <data name="text_train.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="text_train.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 30</value>
+  </data>
+  <data name="text_train.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;text_train.Name" xml:space="preserve">
+    <value>text_train</value>
+  </data>
+  <data name="&gt;&gt;text_train.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;text_train.Parent" xml:space="preserve">
+    <value>groupCreation</value>
+  </data>
+  <data name="&gt;&gt;text_train.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="buttonAddDepo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>233, 30</value>
+  </data>
+  <data name="buttonAddDepo.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="buttonAddDepo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 30</value>
+  </data>
+  <data name="buttonAddDepo.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="buttonAddDepo.Text" xml:space="preserve">
+    <value>Добавить депо</value>
+  </data>
+  <data name="&gt;&gt;buttonAddDepo.Name" xml:space="preserve">
+    <value>buttonAddDepo</value>
+  </data>
+  <data name="&gt;&gt;buttonAddDepo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonAddDepo.Parent" xml:space="preserve">
+    <value>groupCreation</value>
+  </data>
+  <data name="&gt;&gt;buttonAddDepo.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="comboDepoes.Location" type="System.Drawing.Point, System.Drawing">
+    <value>238, 52</value>
+  </data>
+  <data name="comboDepoes.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="comboDepoes.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 30</value>
+  </data>
+  <data name="comboDepoes.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;comboDepoes.Name" xml:space="preserve">
+    <value>comboDepoes</value>
+  </data>
+  <data name="&gt;&gt;comboDepoes.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;comboDepoes.Parent" xml:space="preserve">
+    <value>groupSelection</value>
+  </data>
+  <data name="&gt;&gt;comboDepoes.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="buttonAddToDepo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>14, 52</value>
+  </data>
+  <data name="buttonAddToDepo.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="buttonAddToDepo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 70</value>
+  </data>
+  <data name="buttonAddToDepo.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="buttonAddToDepo.Text" xml:space="preserve">
+    <value>Добавить поезд в депо</value>
+  </data>
+  <data name="&gt;&gt;buttonAddToDepo.Name" xml:space="preserve">
+    <value>buttonAddToDepo</value>
+  </data>
+  <data name="&gt;&gt;buttonAddToDepo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonAddToDepo.Parent" xml:space="preserve">
+    <value>groupAdmin</value>
+  </data>
+  <data name="&gt;&gt;buttonAddToDepo.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="buttonDelFromDepo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>232, 52</value>
+  </data>
+  <data name="buttonDelFromDepo.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="buttonDelFromDepo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 70</value>
+  </data>
+  <data name="buttonDelFromDepo.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="buttonDelFromDepo.Text" xml:space="preserve">
+    <value>Удалить поезд из депо</value>
+  </data>
+  <data name="&gt;&gt;buttonDelFromDepo.Name" xml:space="preserve">
+    <value>buttonDelFromDepo</value>
+  </data>
+  <data name="&gt;&gt;buttonDelFromDepo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonDelFromDepo.Parent" xml:space="preserve">
+    <value>groupAdmin</value>
+  </data>
+  <data name="&gt;&gt;buttonDelFromDepo.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="richTextView.Location" type="System.Drawing.Point, System.Drawing">
+    <value>964, 9</value>
+  </data>
+  <data name="richTextView.Size" type="System.Drawing.Size, System.Drawing">
+    <value>514, 882</value>
+  </data>
+  <data name="richTextView.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="richTextView.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;richTextView.Name" xml:space="preserve">
+    <value>richTextView</value>
+  </data>
+  <data name="&gt;&gt;richTextView.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;richTextView.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;richTextView.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="buttonDelDepo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>232, 130</value>
+  </data>
+  <data name="buttonDelDepo.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="buttonDelDepo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 30</value>
+  </data>
+  <data name="buttonDelDepo.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="buttonDelDepo.Text" xml:space="preserve">
+    <value>Удалить  депо</value>
+  </data>
+  <data name="&gt;&gt;buttonDelDepo.Name" xml:space="preserve">
+    <value>buttonDelDepo</value>
+  </data>
+  <data name="&gt;&gt;buttonDelDepo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonDelDepo.Parent" xml:space="preserve">
+    <value>groupAdmin</value>
+  </data>
+  <data name="&gt;&gt;buttonDelDepo.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="buttonDelTrain.Location" type="System.Drawing.Point, System.Drawing">
+    <value>14, 130</value>
+  </data>
+  <data name="buttonDelTrain.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="buttonDelTrain.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 30</value>
+  </data>
+  <data name="buttonDelTrain.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="buttonDelTrain.Text" xml:space="preserve">
+    <value>Удалить поезд</value>
+  </data>
+  <data name="&gt;&gt;buttonDelTrain.Name" xml:space="preserve">
+    <value>buttonDelTrain</value>
+  </data>
+  <data name="&gt;&gt;buttonDelTrain.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonDelTrain.Parent" xml:space="preserve">
+    <value>groupAdmin</value>
+  </data>
+  <data name="&gt;&gt;buttonDelTrain.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="buttonSort.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 50</value>
+  </data>
+  <data name="buttonSort.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="buttonSort.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 30</value>
+  </data>
+  <data name="buttonSort.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="buttonSort.Text" xml:space="preserve">
+    <value>Сортировать</value>
+  </data>
+  <data name="&gt;&gt;buttonSort.Name" xml:space="preserve">
+    <value>buttonSort</value>
+  </data>
+  <data name="&gt;&gt;buttonSort.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonSort.Parent" xml:space="preserve">
+    <value>groupFunction</value>
+  </data>
+  <data name="&gt;&gt;buttonSort.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="buttonSearch.Location" type="System.Drawing.Point, System.Drawing">
+    <value>242, 50</value>
+  </data>
+  <data name="buttonSearch.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="buttonSearch.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 30</value>
+  </data>
+  <data name="buttonSearch.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="buttonSearch.Text" xml:space="preserve">
+    <value>Поиск</value>
+  </data>
+  <data name="&gt;&gt;buttonSearch.Name" xml:space="preserve">
+    <value>buttonSearch</value>
+  </data>
+  <data name="&gt;&gt;buttonSearch.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonSearch.Parent" xml:space="preserve">
+    <value>groupFunction</value>
+  </data>
+  <data name="&gt;&gt;buttonSearch.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="buttonCleanScr.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 848</value>
+  </data>
+  <data name="buttonCleanScr.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="buttonCleanScr.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 30</value>
+  </data>
+  <data name="buttonCleanScr.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="buttonCleanScr.Text" xml:space="preserve">
+    <value>Очистить</value>
+  </data>
+  <data name="&gt;&gt;buttonCleanScr.Name" xml:space="preserve">
+    <value>buttonCleanScr</value>
+  </data>
+  <data name="&gt;&gt;buttonCleanScr.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonCleanScr.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;buttonCleanScr.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="comboSortType.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Consolas, 9.75pt</value>
+  </data>
+  <data name="comboSortType.Items" xml:space="preserve">
+    <value>Стандартный вывод</value>
+  </data>
+  <data name="comboSortType.Items1" xml:space="preserve">
+    <value>Сортировать по длине </value>
+  </data>
+  <data name="comboSortType.Items2" xml:space="preserve">
+    <value>Сортировать по весу</value>
+  </data>
+  <data name="comboSortType.Items3" xml:space="preserve">
+    <value>Сортировать по скорости </value>
+  </data>
+  <data name="comboSortType.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 98</value>
+  </data>
+  <data name="comboSortType.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="comboSortType.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 23</value>
+  </data>
+  <data name="comboSortType.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="&gt;&gt;comboSortType.Name" xml:space="preserve">
+    <value>comboSortType</value>
+  </data>
+  <data name="&gt;&gt;comboSortType.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;comboSortType.Parent" xml:space="preserve">
+    <value>groupFunction</value>
+  </data>
+  <data name="&gt;&gt;comboSortType.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="comboSearchType.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Consolas, 9.75pt</value>
+  </data>
+  <data name="comboSearchType.Items" xml:space="preserve">
+    <value>Самый длинный</value>
+  </data>
+  <data name="comboSearchType.Items1" xml:space="preserve">
+    <value>Самый короткий</value>
+  </data>
+  <data name="comboSearchType.Items2" xml:space="preserve">
+    <value>Самый тяжелый</value>
+  </data>
+  <data name="comboSearchType.Items3" xml:space="preserve">
+    <value>Самый легкий</value>
+  </data>
+  <data name="comboSearchType.Items4" xml:space="preserve">
+    <value>Самый быстрый</value>
+  </data>
+  <data name="comboSearchType.Items5" xml:space="preserve">
+    <value>Самый медленный</value>
+  </data>
+  <data name="comboSearchType.Items6" xml:space="preserve">
+    <value>Длиннее чем</value>
+  </data>
+  <data name="comboSearchType.Items7" xml:space="preserve">
+    <value>Короче чем</value>
+  </data>
+  <data name="comboSearchType.Items8" xml:space="preserve">
+    <value>Тяжелее чем</value>
+  </data>
+  <data name="comboSearchType.Items9" xml:space="preserve">
+    <value>Легче чем</value>
+  </data>
+  <data name="comboSearchType.Items10" xml:space="preserve">
+    <value>Быстрее чем</value>
+  </data>
+  <data name="comboSearchType.Items11" xml:space="preserve">
+    <value>Медленнее чем</value>
+  </data>
+  <data name="comboSearchType.Items12" xml:space="preserve">
+    <value>Совпадение</value>
+  </data>
+  <data name="comboSearchType.Location" type="System.Drawing.Point, System.Drawing">
+    <value>242, 100</value>
+  </data>
+  <data name="comboSearchType.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="comboSearchType.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 23</value>
+  </data>
+  <data name="comboSearchType.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="&gt;&gt;comboSearchType.Name" xml:space="preserve">
+    <value>comboSearchType</value>
+  </data>
+  <data name="&gt;&gt;comboSearchType.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;comboSearchType.Parent" xml:space="preserve">
+    <value>groupFunction</value>
+  </data>
+  <data name="&gt;&gt;comboSearchType.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="textSearchValue.Location" type="System.Drawing.Point, System.Drawing">
+    <value>242, 175</value>
+  </data>
+  <data name="textSearchValue.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="textSearchValue.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 30</value>
+  </data>
+  <data name="textSearchValue.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
+  </data>
+  <data name="&gt;&gt;textSearchValue.Name" xml:space="preserve">
+    <value>textSearchValue</value>
+  </data>
+  <data name="&gt;&gt;textSearchValue.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;textSearchValue.Parent" xml:space="preserve">
+    <value>groupFunction</value>
+  </data>
+  <data name="&gt;&gt;textSearchValue.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="groupCreation.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 12</value>
+  </data>
+  <data name="groupCreation.Size" type="System.Drawing.Size, System.Drawing">
+    <value>444, 141</value>
+  </data>
+  <data name="groupCreation.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
+  </data>
+  <data name="groupCreation.Text" xml:space="preserve">
+    <value>Добавление</value>
+  </data>
+  <data name="&gt;&gt;groupCreation.Name" xml:space="preserve">
+    <value>groupCreation</value>
+  </data>
+  <data name="&gt;&gt;groupCreation.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupCreation.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;groupCreation.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="label3.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 26</value>
+  </data>
+  <data name="label3.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
+  </data>
+  <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>160, 22</value>
+  </data>
+  <data name="label3.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Выберите поезд:</value>
+  </data>
+  <data name="&gt;&gt;label3.Name" xml:space="preserve">
+    <value>label3</value>
+  </data>
+  <data name="&gt;&gt;label3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label3.Parent" xml:space="preserve">
+    <value>groupSelection</value>
+  </data>
+  <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="label4.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>238, 26</value>
+  </data>
+  <data name="label4.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
+  </data>
+  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>150, 22</value>
+  </data>
+  <data name="label4.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="label4.Text" xml:space="preserve">
+    <value>Выберите депо:</value>
+  </data>
+  <data name="&gt;&gt;label4.Name" xml:space="preserve">
+    <value>label4</value>
+  </data>
+  <data name="&gt;&gt;label4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label4.Parent" xml:space="preserve">
+    <value>groupSelection</value>
+  </data>
+  <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="groupSelection.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 170</value>
+  </data>
+  <data name="groupSelection.Size" type="System.Drawing.Size, System.Drawing">
+    <value>444, 100</value>
+  </data>
+  <data name="groupSelection.TabIndex" type="System.Int32, mscorlib">
+    <value>20</value>
+  </data>
+  <data name="groupSelection.Text" xml:space="preserve">
+    <value>Выбор</value>
+  </data>
+  <data name="&gt;&gt;groupSelection.Name" xml:space="preserve">
+    <value>groupSelection</value>
+  </data>
+  <data name="&gt;&gt;groupSelection.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupSelection.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;groupSelection.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="label6.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 26</value>
+  </data>
+  <data name="label6.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
+  </data>
+  <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>380, 22</value>
+  </data>
+  <data name="label6.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
+  </data>
+  <data name="label6.Text" xml:space="preserve">
+    <value>Необходимо выбрать депо в окне выбора</value>
+  </data>
+  <data name="&gt;&gt;label6.Name" xml:space="preserve">
+    <value>label6</value>
+  </data>
+  <data name="&gt;&gt;label6.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label6.Parent" xml:space="preserve">
+    <value>groupFunction</value>
+  </data>
+  <data name="&gt;&gt;label6.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="label5.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>242, 127</value>
+  </data>
+  <data name="label5.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
+  </data>
+  <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>170, 44</value>
+  </data>
+  <data name="label5.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="label5.Text" xml:space="preserve">
+    <value>Введите значение
+ для поиска</value>
+  </data>
+  <data name="&gt;&gt;label5.Name" xml:space="preserve">
+    <value>label5</value>
+  </data>
+  <data name="&gt;&gt;label5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label5.Parent" xml:space="preserve">
+    <value>groupFunction</value>
+  </data>
+  <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="groupFunction.Location" type="System.Drawing.Point, System.Drawing">
+    <value>475, 12</value>
+  </data>
+  <data name="groupFunction.Size" type="System.Drawing.Size, System.Drawing">
+    <value>449, 258</value>
+  </data>
+  <data name="groupFunction.TabIndex" type="System.Int32, mscorlib">
+    <value>21</value>
+  </data>
+  <data name="groupFunction.Text" xml:space="preserve">
+    <value>Функции</value>
+  </data>
+  <data name="&gt;&gt;groupFunction.Name" xml:space="preserve">
+    <value>groupFunction</value>
+  </data>
+  <data name="&gt;&gt;groupFunction.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupFunction.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;groupFunction.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="label7.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label7.Location" type="System.Drawing.Point, System.Drawing">
+    <value>14, 26</value>
+  </data>
+  <data name="label7.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
+  </data>
+  <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
+    <value>380, 22</value>
+  </data>
+  <data name="label7.TabIndex" type="System.Int32, mscorlib">
+    <value>20</value>
+  </data>
+  <data name="label7.Text" xml:space="preserve">
+    <value>Необходимо выбрать депо в окне выбора</value>
+  </data>
+  <data name="&gt;&gt;label7.Name" xml:space="preserve">
+    <value>label7</value>
+  </data>
+  <data name="&gt;&gt;label7.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label7.Parent" xml:space="preserve">
+    <value>groupAdmin</value>
+  </data>
+  <data name="&gt;&gt;label7.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="groupAdmin.Location" type="System.Drawing.Point, System.Drawing">
+    <value>236, 296</value>
+  </data>
+  <data name="groupAdmin.Size" type="System.Drawing.Size, System.Drawing">
+    <value>439, 173</value>
+  </data>
+  <data name="groupAdmin.TabIndex" type="System.Int32, mscorlib">
+    <value>22</value>
+  </data>
+  <data name="groupAdmin.Text" xml:space="preserve">
+    <value>Управление</value>
+  </data>
+  <data name="&gt;&gt;groupAdmin.Name" xml:space="preserve">
+    <value>groupAdmin</value>
+  </data>
+  <data name="&gt;&gt;groupAdmin.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupAdmin.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;groupAdmin.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="bt_changeLanguage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 810</value>
+  </data>
+  <data name="bt_changeLanguage.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="bt_changeLanguage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 30</value>
+  </data>
+  <data name="bt_changeLanguage.TabIndex" type="System.Int32, mscorlib">
+    <value>23</value>
+  </data>
+  <data name="bt_changeLanguage.Text" xml:space="preserve">
+    <value>Русский</value>
+  </data>
+  <data name="&gt;&gt;bt_changeLanguage.Name" xml:space="preserve">
+    <value>bt_changeLanguage</value>
+  </data>
+  <data name="&gt;&gt;bt_changeLanguage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;bt_changeLanguage.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;bt_changeLanguage.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>10, 22</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>1490, 903</value>
+  </data>
+  <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Consolas, 14.25pt</value>
+  </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAEAQEAAAAEAIAAoQgAAFgAAACgAAABAAAAAgAAAAAEAIAAAAAAAAEIAAAAAAAAAAAAAAAAAAAAA
@@ -404,5 +1184,17 @@
         AH/4AAAAAAAAf/gAAAAAAAB/+AAAAAAAAH/4AAAAAAAAf/gAAAAAAAB/+AAAAAAAAH/+AAAAAAAB///+
         AAAAAf////////H///////////////////////////////////8=
 </value>
+  </data>
+  <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Депо</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>ViewForm</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>

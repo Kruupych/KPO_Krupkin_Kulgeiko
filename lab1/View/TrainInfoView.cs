@@ -28,6 +28,32 @@ namespace RailwayTransport.View
             }
         }
 
+        public static string GetDepoInfo(Depo depo)
+        {
+            var sb = new StringBuilder();
+
+            for (int i = 0; i < depo.Trains.Count; i++)
+            {
+                sb.AppendLine($"\n\nПоезд №{i + 1}:");
+                sb.AppendLine(GetTrainInfo(depo[i]));
+                sb.AppendLine("--------------------------------------------------------------------------");
+            }
+
+            return sb.ToString();
+        }
+
+        public static string GetTrainInfo(Train train)
+        {
+            var sb = new StringBuilder();
+            sb.AppendLine("\nДлина поезда: " + train.Length + "м");
+            sb.AppendLine("\nСамый длинный вагон: " + train.FindLongestWagon().ToString());
+            sb.AppendLine("\nСамый короткий вагон: " + train.FindShortestWagon().ToString());
+            sb.AppendLine("\nВес поезда: " + train.TotalWeight.ToString("f2") + " т");
+            sb.AppendLine("\nМаксимальная скорость: " + train.MaxSpeed.ToString("f1") + " км/ч");
+
+            return sb.ToString();
+        }
+
         public static void ShowTrainInfoWF(Train train, RichTextBox tb)
         {
 
@@ -44,6 +70,7 @@ namespace RailwayTransport.View
             {
                 tb.AppendText($"\n\nПоезд №{i + 1}: \n");
                 ShowTrainInfoWF(depo[i],tb);
+                tb.AppendText("--------------------------------------------------------------------------");
             }
         }
     }

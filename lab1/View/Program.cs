@@ -1,5 +1,6 @@
 ﻿using RailwayTransport.Controller;
 using RailwayTransport.View;
+using RailwayTransport.View.Printers;
 using Serilog;
 
 namespace RailwayTransport
@@ -14,39 +15,47 @@ namespace RailwayTransport
                .WriteTo.File("logs/myapp.txt", rollingInterval: RollingInterval.Day)
                .CreateLogger();
 
-            ViewForm form1 = new ViewForm();
+            string language = "ru-RU";
+
+            while (true)
+            {
+                ViewForm form = new ViewForm(language);
+
+                form.ShowDialog();
+
+                if (form.LanguageChanged)
+                {
+                    language = form.CurrentLanguage;
+                }
+                else
+                {
+                    break;
+                }
+            }
+
+            var depoController = new DepoController();
+
+            var serializer = new RailwaySerializer("test1");
+            var depo = serializer.DeserializeDepo();
+
+            //var trains = depoController.CreateTrains(5);
+            //var depo = depoController.CreateDepo(trains);
+
             
-            form1.ShowDialog();
-            var train0 = TrainCreator.CreateTrain(wagonsCount: 30);
-            var train1 = TrainCreator.CreateTrain(wagonsCount: 11);
-            var train2 = TrainCreator.CreateTrain(wagonsCount: 22);
-            var train3 = TrainCreator.CreateTrain(wagonsCount: 10);
-            var train4 = TrainCreator.CreateTrain(wagonsCount: 8);
-
-            Depo depo = new Depo(5);
-            //depo.DeserializeTrains("test");
-
-            depo.AddTrain(train0);
-            depo.AddTrain(train1);
-            depo.AddTrain(train2);
-            depo.AddTrain(train3);
-            depo.AddTrain(train4);
-            //depo.SerializeTrains("test");
-
-
-
-
+            //serializer.SerializeDepo(depo);
+            
             Log.Information("\n\t---До сортировки:---\n");
-            TrainInfoView.ShowDepoInfo(depo);
+            depoController.SetPrinter(new FilePrinter($"testPrinter.txt"));
+            depoController.PrintDepoInfo(depo);
 
             Log.Information("\n\n\t---Сортировка по скорости:---\n");
-            TrainInfoView.ShowDepoInfo(depo.SortBySpeed());
+            depoController.PrintDepoInfo(depo.SortBySpeed());
                     
             Log.Information("\n\n\t---Сортировка по длине:---\n");
-            TrainInfoView.ShowDepoInfo(depo.SortByLength());
+            depoController.PrintDepoInfo(depo.SortByLength());
 
             Log.Information("\n\n\t---Сортировка по весу:---\n");
-            TrainInfoView.ShowDepoInfo(depo.SortByWeight());
+            depoController.PrintDepoInfo(depo.SortByWeight());
 
             //Console.ReadKey();
             Console.ReadLine();

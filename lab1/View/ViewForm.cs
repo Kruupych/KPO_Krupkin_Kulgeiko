@@ -17,22 +17,33 @@ namespace RailwayTransport.View
 {
     public partial class ViewForm : Form
     {
-        public ViewForm()
-        {
-            InitializeComponent();
-        }
         Dictionary<string, Train> trains = new Dictionary<string, Train>();
         Dictionary<string, Depo> depoes = new Dictionary<string, Depo>();
+        DepoController _depoController;
 
         int countTrains = 0, countDepoes = 0;
+
+        public bool LanguageChanged { get; set; }
+        public string CurrentLanguage { get; set; }
+
+        public ViewForm(string language)
+        {
+            Thread.CurrentThread.CurrentUICulture = System.Globalization.CultureInfo.GetCultureInfo(language);
+            InitializeComponent();
+            _depoController = new DepoController();
+            CurrentLanguage = language;
+        }
+
         private void buttonAddTrain_Click(object sender, EventArgs e)
         {
             try
             {
-                var train0 = TrainCreator.CreateTrain(wagonsCount: int.Parse(text_wagon.Text));
+                var train = _depoController.CreateTrain(int.Parse(text_wagon.Text), false, true);
+                
+                //var train0 = TrainCreator.CreateTrain(wagonsCount: int.Parse(text_wagon.Text));
 
                 string name = "Поезд: " + (++countTrains);
-                trains.Add(name, train0);
+                trains.Add(name, train);
                 comboTrains.Items.Add(name);
             }
             catch (Exception ex)
@@ -45,7 +56,9 @@ namespace RailwayTransport.View
         {
             try
             {
-                Depo depo = new Depo(int.Parse(text_train.Text));
+                Depo depo = _depoController.CreateDepo(int.Parse(text_train.Text));
+
+                //Depo depo = new Depo(int.Parse(text_train.Text));
 
                 string name = "Депо: " + (++countDepoes);
                 depoes.Add(name, depo);
@@ -188,6 +201,26 @@ namespace RailwayTransport.View
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void bt_changeLanguage_Click(object sender, EventArgs e)
+        {
+            if (CurrentLanguage == "ru-RU")
+            {
+                CurrentLanguage = "en-US";
+            }
+            else
+            {
+                CurrentLanguage = "ru-RU";
+            }
+
+            LanguageChanged = true;
+            this.Close();
+        }
+
+        private void buttonAddTrain_Click_1(object sender, EventArgs e)
+        {
+
         }
 
         private void buttonSearch_Click(object sender, EventArgs e)

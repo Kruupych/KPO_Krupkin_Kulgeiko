@@ -20,9 +20,10 @@ namespace RailwayTransport
             _trainList = new List<Train>();
         }
 
-        public Depo(List<Train> trainList, int maxCapacity)
+        [JsonConstructor]
+        public Depo(IEnumerable<Train> trains, int maxCapacity)
         {
-            _trainList = trainList;
+            _trainList = trains.ToList();
             MaxCapacity = maxCapacity;
         }
 

@@ -19,8 +19,4 @@
     <ProjectReference Include="..\Locomotive\Locomotive.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Json\" />
-  </ItemGroup>
-
 </Project>
