@@ -55,10 +55,12 @@
             comboBox2 = new ComboBox();
             guna2GradientButton1 = new Guna.UI2.WinForms.Guna2GradientButton();
             guna2GradientButton2 = new Guna.UI2.WinForms.Guna2GradientButton();
-            guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
-            guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
-            guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
-            guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
+            butttonAddW = new Guna.UI2.WinForms.Guna2Button();
+            buttonDelW = new Guna.UI2.WinForms.Guna2Button();
+            buttonClearW = new Guna.UI2.WinForms.Guna2Button();
+            buttonLoadW = new Guna.UI2.WinForms.Guna2Button();
+            TimeNow = new Label();
+            timer1 = new System.Windows.Forms.Timer(components);
             SuspendLayout();
             // 
             // guna2BorderlessForm1
@@ -71,7 +73,7 @@
             // 
             guna2ControlBox1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             guna2ControlBox1.CustomizableEdges = customizableEdges13;
-            guna2ControlBox1.FillColor = Color.FromArgb(139, 152, 166);
+            guna2ControlBox1.FillColor = Color.Red;
             guna2ControlBox1.IconColor = Color.White;
             guna2ControlBox1.Location = new Point(1156, -1);
             guna2ControlBox1.Name = "guna2ControlBox1";
@@ -174,69 +176,85 @@
             guna2GradientButton2.TabIndex = 11;
             guna2GradientButton2.Text = "Поезд отправился";
             // 
-            // guna2Button1
+            // butttonAddW
             // 
-            guna2Button1.CustomizableEdges = customizableEdges7;
-            guna2Button1.DisabledState.BorderColor = Color.DarkGray;
-            guna2Button1.DisabledState.CustomBorderColor = Color.DarkGray;
-            guna2Button1.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            guna2Button1.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            guna2Button1.Font = new Font("Consolas", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            guna2Button1.ForeColor = Color.White;
-            guna2Button1.Location = new Point(13, 143);
-            guna2Button1.Name = "guna2Button1";
-            guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            guna2Button1.Size = new Size(180, 45);
-            guna2Button1.TabIndex = 12;
-            guna2Button1.Text = "Добавить вагон";
+            butttonAddW.CustomizableEdges = customizableEdges7;
+            butttonAddW.DisabledState.BorderColor = Color.DarkGray;
+            butttonAddW.DisabledState.CustomBorderColor = Color.DarkGray;
+            butttonAddW.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            butttonAddW.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            butttonAddW.Font = new Font("Consolas", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            butttonAddW.ForeColor = Color.White;
+            butttonAddW.Location = new Point(13, 143);
+            butttonAddW.Name = "butttonAddW";
+            butttonAddW.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            butttonAddW.Size = new Size(180, 45);
+            butttonAddW.TabIndex = 12;
+            butttonAddW.Text = "Добавить вагон";
+            butttonAddW.Click += butttonAddW_Click;
             // 
-            // guna2Button2
+            // buttonDelW
             // 
-            guna2Button2.CustomizableEdges = customizableEdges5;
-            guna2Button2.DisabledState.BorderColor = Color.DarkGray;
-            guna2Button2.DisabledState.CustomBorderColor = Color.DarkGray;
-            guna2Button2.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            guna2Button2.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            guna2Button2.Font = new Font("Consolas", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            guna2Button2.ForeColor = Color.White;
-            guna2Button2.Location = new Point(199, 143);
-            guna2Button2.Name = "guna2Button2";
-            guna2Button2.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            guna2Button2.Size = new Size(180, 45);
-            guna2Button2.TabIndex = 13;
-            guna2Button2.Text = "Удалить вагон";
+            buttonDelW.CustomizableEdges = customizableEdges5;
+            buttonDelW.DisabledState.BorderColor = Color.DarkGray;
+            buttonDelW.DisabledState.CustomBorderColor = Color.DarkGray;
+            buttonDelW.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            buttonDelW.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            buttonDelW.Font = new Font("Consolas", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            buttonDelW.ForeColor = Color.White;
+            buttonDelW.Location = new Point(199, 143);
+            buttonDelW.Name = "buttonDelW";
+            buttonDelW.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            buttonDelW.Size = new Size(180, 45);
+            buttonDelW.TabIndex = 13;
+            buttonDelW.Text = "Удалить вагон";
             // 
-            // guna2Button3
+            // buttonClearW
             // 
-            guna2Button3.CustomizableEdges = customizableEdges1;
-            guna2Button3.DisabledState.BorderColor = Color.DarkGray;
-            guna2Button3.DisabledState.CustomBorderColor = Color.DarkGray;
-            guna2Button3.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            guna2Button3.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            guna2Button3.Font = new Font("Consolas", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            guna2Button3.ForeColor = Color.White;
-            guna2Button3.Location = new Point(199, 194);
-            guna2Button3.Name = "guna2Button3";
-            guna2Button3.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            guna2Button3.Size = new Size(180, 45);
-            guna2Button3.TabIndex = 15;
-            guna2Button3.Text = "Разгрузить вагон";
+            buttonClearW.CustomizableEdges = customizableEdges1;
+            buttonClearW.DisabledState.BorderColor = Color.DarkGray;
+            buttonClearW.DisabledState.CustomBorderColor = Color.DarkGray;
+            buttonClearW.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            buttonClearW.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            buttonClearW.Font = new Font("Consolas", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            buttonClearW.ForeColor = Color.White;
+            buttonClearW.Location = new Point(199, 194);
+            buttonClearW.Name = "buttonClearW";
+            buttonClearW.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            buttonClearW.Size = new Size(180, 45);
+            buttonClearW.TabIndex = 15;
+            buttonClearW.Text = "Разгрузить вагон";
             // 
-            // guna2Button4
+            // buttonLoadW
             // 
-            guna2Button4.CustomizableEdges = customizableEdges3;
-            guna2Button4.DisabledState.BorderColor = Color.DarkGray;
-            guna2Button4.DisabledState.CustomBorderColor = Color.DarkGray;
-            guna2Button4.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            guna2Button4.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            guna2Button4.Font = new Font("Consolas", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            guna2Button4.ForeColor = Color.White;
-            guna2Button4.Location = new Point(13, 194);
-            guna2Button4.Name = "guna2Button4";
-            guna2Button4.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            guna2Button4.Size = new Size(180, 45);
-            guna2Button4.TabIndex = 14;
-            guna2Button4.Text = "Загрузить вагон";
+            buttonLoadW.CustomizableEdges = customizableEdges3;
+            buttonLoadW.DisabledState.BorderColor = Color.DarkGray;
+            buttonLoadW.DisabledState.CustomBorderColor = Color.DarkGray;
+            buttonLoadW.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            buttonLoadW.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            buttonLoadW.Font = new Font("Consolas", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            buttonLoadW.ForeColor = Color.White;
+            buttonLoadW.Location = new Point(13, 194);
+            buttonLoadW.Name = "buttonLoadW";
+            buttonLoadW.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            buttonLoadW.Size = new Size(180, 45);
+            buttonLoadW.TabIndex = 14;
+            buttonLoadW.Text = "Загрузить вагон";
+            buttonLoadW.Click += butttonAddW_Click;
+            // 
+            // TimeNow
+            // 
+            TimeNow.AutoSize = true;
+            TimeNow.Font = new Font("Consolas", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            TimeNow.Location = new Point(582, 4);
+            TimeNow.Name = "TimeNow";
+            TimeNow.Size = new Size(0, 24);
+            TimeNow.TabIndex = 16;
+            // 
+            // timer1
+            // 
+            timer1.Interval = 1000;
+            timer1.Tick += timer1_Tick;
             // 
             // Form1
             // 
@@ -244,10 +262,11 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(255, 192, 128);
             ClientSize = new Size(1200, 600);
-            Controls.Add(guna2Button3);
-            Controls.Add(guna2Button4);
-            Controls.Add(guna2Button2);
-            Controls.Add(guna2Button1);
+            Controls.Add(TimeNow);
+            Controls.Add(buttonClearW);
+            Controls.Add(buttonLoadW);
+            Controls.Add(buttonDelW);
+            Controls.Add(butttonAddW);
             Controls.Add(guna2GradientButton2);
             Controls.Add(guna2GradientButton1);
             Controls.Add(comboBox2);
@@ -280,9 +299,11 @@
         private ComboBox comboBox2;
         private Guna.UI2.WinForms.Guna2GradientButton guna2GradientButton2;
         private Guna.UI2.WinForms.Guna2GradientButton guna2GradientButton1;
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
-        private Guna.UI2.WinForms.Guna2Button guna2Button3;
-        private Guna.UI2.WinForms.Guna2Button guna2Button4;
-        private Guna.UI2.WinForms.Guna2Button guna2Button2;
+        private Guna.UI2.WinForms.Guna2Button butttonAddW;
+        private Guna.UI2.WinForms.Guna2Button buttonClearW;
+        private Guna.UI2.WinForms.Guna2Button buttonLoadW;
+        private Guna.UI2.WinForms.Guna2Button buttonDelW;
+        private Label TimeNow;
+        private System.Windows.Forms.Timer timer1;
     }
 }
