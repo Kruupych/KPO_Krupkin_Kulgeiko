@@ -15,9 +15,23 @@ namespace RailwayTransport
                .WriteTo.File("logs/myapp.txt", rollingInterval: RollingInterval.Day)
                .CreateLogger();
 
-            ViewForm form1 = new ViewForm();
-            
-            //form1.ShowDialog();
+            string language = "ru-RU";
+
+            while (true)
+            {
+                ViewForm form = new ViewForm(language);
+
+                form.ShowDialog();
+
+                if (form.LanguageChanged)
+                {
+                    language = form.CurrentLanguage;
+                }
+                else
+                {
+                    break;
+                }
+            }
 
             var depoController = new DepoController();
 
@@ -31,7 +45,7 @@ namespace RailwayTransport
             //serializer.SerializeDepo(depo);
             
             Log.Information("\n\t---До сортировки:---\n");
-            //depoController.SetPrinter(new FilePrinter($"testPrinter.txt"));
+            depoController.SetPrinter(new FilePrinter($"testPrinter.txt"));
             depoController.PrintDepoInfo(depo);
 
             Log.Information("\n\n\t---Сортировка по скорости:---\n");

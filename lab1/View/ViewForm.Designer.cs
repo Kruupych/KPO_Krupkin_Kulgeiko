@@ -29,369 +29,277 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ViewForm));
-            comboTrains = new ComboBox();
-            buttonAddTrain = new Button();
-            text_wagon = new TextBox();
-            label1 = new Label();
-            label2 = new Label();
-            text_train = new TextBox();
-            buttonAddDepo = new Button();
-            comboDepoes = new ComboBox();
-            buttonAddToDepo = new Button();
-            buttonDelFromDepo = new Button();
-            richTextView = new RichTextBox();
-            buttonDelDepo = new Button();
-            buttonDelTrain = new Button();
-            buttonSort = new Button();
-            buttonSearch = new Button();
-            buttonCleanScr = new Button();
-            comboSortType = new ComboBox();
-            comboSearchType = new ComboBox();
-            textSearchValue = new TextBox();
-            groupCreation = new GroupBox();
-            label3 = new Label();
-            label4 = new Label();
-            groupSelection = new GroupBox();
-            groupFunction = new GroupBox();
-            label6 = new Label();
-            label5 = new Label();
-            groupAdmin = new GroupBox();
-            label7 = new Label();
-            groupCreation.SuspendLayout();
-            groupSelection.SuspendLayout();
-            groupFunction.SuspendLayout();
-            groupAdmin.SuspendLayout();
-            SuspendLayout();
+            this.comboTrains = new System.Windows.Forms.ComboBox();
+            this.buttonAddTrain = new System.Windows.Forms.Button();
+            this.text_wagon = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.text_train = new System.Windows.Forms.TextBox();
+            this.buttonAddDepo = new System.Windows.Forms.Button();
+            this.comboDepoes = new System.Windows.Forms.ComboBox();
+            this.buttonAddToDepo = new System.Windows.Forms.Button();
+            this.buttonDelFromDepo = new System.Windows.Forms.Button();
+            this.richTextView = new System.Windows.Forms.RichTextBox();
+            this.buttonDelDepo = new System.Windows.Forms.Button();
+            this.buttonDelTrain = new System.Windows.Forms.Button();
+            this.buttonSort = new System.Windows.Forms.Button();
+            this.buttonSearch = new System.Windows.Forms.Button();
+            this.buttonCleanScr = new System.Windows.Forms.Button();
+            this.comboSortType = new System.Windows.Forms.ComboBox();
+            this.comboSearchType = new System.Windows.Forms.ComboBox();
+            this.textSearchValue = new System.Windows.Forms.TextBox();
+            this.groupCreation = new System.Windows.Forms.GroupBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.groupSelection = new System.Windows.Forms.GroupBox();
+            this.groupFunction = new System.Windows.Forms.GroupBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.groupAdmin = new System.Windows.Forms.GroupBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.bt_changeLanguage = new System.Windows.Forms.Button();
+            this.groupCreation.SuspendLayout();
+            this.groupSelection.SuspendLayout();
+            this.groupFunction.SuspendLayout();
+            this.groupAdmin.SuspendLayout();
+            this.SuspendLayout();
             // 
             // comboTrains
             // 
-            comboTrains.DropDownStyle = ComboBoxStyle.DropDownList;
-            comboTrains.FormattingEnabled = true;
-            comboTrains.Location = new Point(5, 52);
-            comboTrains.Margin = new Padding(4);
-            comboTrains.Name = "comboTrains";
-            comboTrains.Size = new Size(200, 30);
-            comboTrains.TabIndex = 0;
+            this.comboTrains.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboTrains.FormattingEnabled = true;
+            resources.ApplyResources(this.comboTrains, "comboTrains");
+            this.comboTrains.Name = "comboTrains";
             // 
             // buttonAddTrain
             // 
-            buttonAddTrain.Location = new Point(13, 30);
-            buttonAddTrain.Margin = new Padding(4);
-            buttonAddTrain.Name = "buttonAddTrain";
-            buttonAddTrain.Size = new Size(200, 30);
-            buttonAddTrain.TabIndex = 1;
-            buttonAddTrain.Text = "Добавить поезд";
-            buttonAddTrain.UseVisualStyleBackColor = true;
-            buttonAddTrain.Click += buttonAddTrain_Click;
+            resources.ApplyResources(this.buttonAddTrain, "buttonAddTrain");
+            this.buttonAddTrain.Name = "buttonAddTrain";
+            this.buttonAddTrain.UseVisualStyleBackColor = true;
+            this.buttonAddTrain.Click += new System.EventHandler(this.buttonAddTrain_Click);
             // 
             // text_wagon
             // 
-            text_wagon.Location = new Point(13, 95);
-            text_wagon.Margin = new Padding(4);
-            text_wagon.Name = "text_wagon";
-            text_wagon.Size = new Size(200, 30);
-            text_wagon.TabIndex = 2;
+            resources.ApplyResources(this.text_wagon, "text_wagon");
+            this.text_wagon.Name = "text_wagon";
             // 
             // label1
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(13, 64);
-            label1.Margin = new Padding(4, 0, 4, 0);
-            label1.Name = "label1";
-            label1.Size = new Size(200, 22);
-            label1.TabIndex = 3;
-            label1.Text = "Количество вагонов:";
+            resources.ApplyResources(this.label1, "label1");
+            this.label1.Name = "label1";
             // 
             // label2
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(221, 64);
-            label2.Margin = new Padding(4, 0, 4, 0);
-            label2.Name = "label2";
-            label2.Size = new Size(200, 22);
-            label2.TabIndex = 6;
-            label2.Text = "Количество поездов:";
+            resources.ApplyResources(this.label2, "label2");
+            this.label2.Name = "label2";
             // 
             // text_train
             // 
-            text_train.Location = new Point(233, 95);
-            text_train.Margin = new Padding(4);
-            text_train.Name = "text_train";
-            text_train.Size = new Size(200, 30);
-            text_train.TabIndex = 5;
+            resources.ApplyResources(this.text_train, "text_train");
+            this.text_train.Name = "text_train";
             // 
             // buttonAddDepo
             // 
-            buttonAddDepo.Location = new Point(233, 30);
-            buttonAddDepo.Margin = new Padding(4);
-            buttonAddDepo.Name = "buttonAddDepo";
-            buttonAddDepo.Size = new Size(200, 30);
-            buttonAddDepo.TabIndex = 4;
-            buttonAddDepo.Text = "Добавить депо";
-            buttonAddDepo.UseVisualStyleBackColor = true;
-            buttonAddDepo.Click += buttonAddDepo_Click;
+            resources.ApplyResources(this.buttonAddDepo, "buttonAddDepo");
+            this.buttonAddDepo.Name = "buttonAddDepo";
+            this.buttonAddDepo.UseVisualStyleBackColor = true;
+            this.buttonAddDepo.Click += new System.EventHandler(this.buttonAddDepo_Click);
             // 
             // comboDepoes
             // 
-            comboDepoes.DropDownStyle = ComboBoxStyle.DropDownList;
-            comboDepoes.FormattingEnabled = true;
-            comboDepoes.Location = new Point(238, 52);
-            comboDepoes.Margin = new Padding(4);
-            comboDepoes.Name = "comboDepoes";
-            comboDepoes.Size = new Size(200, 30);
-            comboDepoes.TabIndex = 7;
+            this.comboDepoes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboDepoes.FormattingEnabled = true;
+            resources.ApplyResources(this.comboDepoes, "comboDepoes");
+            this.comboDepoes.Name = "comboDepoes";
             // 
             // buttonAddToDepo
             // 
-            buttonAddToDepo.Location = new Point(14, 52);
-            buttonAddToDepo.Margin = new Padding(4);
-            buttonAddToDepo.Name = "buttonAddToDepo";
-            buttonAddToDepo.Size = new Size(200, 70);
-            buttonAddToDepo.TabIndex = 8;
-            buttonAddToDepo.Text = "Добавить поезд в депо";
-            buttonAddToDepo.UseVisualStyleBackColor = true;
-            buttonAddToDepo.Click += button1_Click;
+            resources.ApplyResources(this.buttonAddToDepo, "buttonAddToDepo");
+            this.buttonAddToDepo.Name = "buttonAddToDepo";
+            this.buttonAddToDepo.UseVisualStyleBackColor = true;
             // 
             // buttonDelFromDepo
             // 
-            buttonDelFromDepo.Location = new Point(232, 52);
-            buttonDelFromDepo.Margin = new Padding(4);
-            buttonDelFromDepo.Name = "buttonDelFromDepo";
-            buttonDelFromDepo.Size = new Size(200, 70);
-            buttonDelFromDepo.TabIndex = 9;
-            buttonDelFromDepo.Text = "Удалить поезд из депо";
-            buttonDelFromDepo.UseVisualStyleBackColor = true;
-            buttonDelFromDepo.Click += button2_Click;
+            resources.ApplyResources(this.buttonDelFromDepo, "buttonDelFromDepo");
+            this.buttonDelFromDepo.Name = "buttonDelFromDepo";
+            this.buttonDelFromDepo.UseVisualStyleBackColor = true;
             // 
             // richTextView
             // 
-            richTextView.Location = new Point(964, 9);
-            richTextView.Name = "richTextView";
-            richTextView.Size = new Size(514, 882);
-            richTextView.TabIndex = 10;
-            richTextView.Text = "";
+            resources.ApplyResources(this.richTextView, "richTextView");
+            this.richTextView.Name = "richTextView";
             // 
             // buttonDelDepo
             // 
-            buttonDelDepo.Location = new Point(232, 130);
-            buttonDelDepo.Margin = new Padding(4);
-            buttonDelDepo.Name = "buttonDelDepo";
-            buttonDelDepo.Size = new Size(200, 30);
-            buttonDelDepo.TabIndex = 11;
-            buttonDelDepo.Text = "Удалить  депо";
-            buttonDelDepo.UseVisualStyleBackColor = true;
-            buttonDelDepo.Click += buttonDelDepo_Click;
+            resources.ApplyResources(this.buttonDelDepo, "buttonDelDepo");
+            this.buttonDelDepo.Name = "buttonDelDepo";
+            this.buttonDelDepo.UseVisualStyleBackColor = true;
             // 
             // buttonDelTrain
             // 
-            buttonDelTrain.Location = new Point(14, 130);
-            buttonDelTrain.Margin = new Padding(4);
-            buttonDelTrain.Name = "buttonDelTrain";
-            buttonDelTrain.Size = new Size(200, 30);
-            buttonDelTrain.TabIndex = 12;
-            buttonDelTrain.Text = "Удалить поезд";
-            buttonDelTrain.UseVisualStyleBackColor = true;
-            buttonDelTrain.Click += buttonDelTrain_Click;
+            resources.ApplyResources(this.buttonDelTrain, "buttonDelTrain");
+            this.buttonDelTrain.Name = "buttonDelTrain";
+            this.buttonDelTrain.UseVisualStyleBackColor = true;
             // 
             // buttonSort
             // 
-            buttonSort.Location = new Point(12, 50);
-            buttonSort.Margin = new Padding(4);
-            buttonSort.Name = "buttonSort";
-            buttonSort.Size = new Size(200, 30);
-            buttonSort.TabIndex = 13;
-            buttonSort.Text = "Сортировать";
-            buttonSort.UseVisualStyleBackColor = true;
-            buttonSort.Click += buttonSort_Click;
+            resources.ApplyResources(this.buttonSort, "buttonSort");
+            this.buttonSort.Name = "buttonSort";
+            this.buttonSort.UseVisualStyleBackColor = true;
+            this.buttonSort.Click += new System.EventHandler(this.buttonSort_Click);
             // 
             // buttonSearch
             // 
-            buttonSearch.Location = new Point(242, 50);
-            buttonSearch.Margin = new Padding(4);
-            buttonSearch.Name = "buttonSearch";
-            buttonSearch.Size = new Size(200, 30);
-            buttonSearch.TabIndex = 14;
-            buttonSearch.Text = "Поиск";
-            buttonSearch.UseVisualStyleBackColor = true;
-            buttonSearch.Click += buttonSearch_Click;
+            resources.ApplyResources(this.buttonSearch, "buttonSearch");
+            this.buttonSearch.Name = "buttonSearch";
+            this.buttonSearch.UseVisualStyleBackColor = true;
+            this.buttonSearch.Click += new System.EventHandler(this.buttonSearch_Click);
             // 
             // buttonCleanScr
             // 
-            buttonCleanScr.Location = new Point(13, 848);
-            buttonCleanScr.Margin = new Padding(4);
-            buttonCleanScr.Name = "buttonCleanScr";
-            buttonCleanScr.Size = new Size(200, 30);
-            buttonCleanScr.TabIndex = 15;
-            buttonCleanScr.Text = "Очистить";
-            buttonCleanScr.UseVisualStyleBackColor = true;
-            buttonCleanScr.Click += buttonCleanScr_Click;
+            resources.ApplyResources(this.buttonCleanScr, "buttonCleanScr");
+            this.buttonCleanScr.Name = "buttonCleanScr";
+            this.buttonCleanScr.UseVisualStyleBackColor = true;
             // 
             // comboSortType
             // 
-            comboSortType.DropDownStyle = ComboBoxStyle.DropDownList;
-            comboSortType.Font = new Font("Consolas", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            comboSortType.FormattingEnabled = true;
-            comboSortType.Items.AddRange(new object[] { "Стандартный вывод", "Сортировать по длине ", "Сортировать по весу", "Сортировать по скорости " });
-            comboSortType.Location = new Point(12, 98);
-            comboSortType.Margin = new Padding(4);
-            comboSortType.Name = "comboSortType";
-            comboSortType.Size = new Size(200, 23);
-            comboSortType.TabIndex = 16;
+            this.comboSortType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            resources.ApplyResources(this.comboSortType, "comboSortType");
+            this.comboSortType.FormattingEnabled = true;
+            this.comboSortType.Items.AddRange(new object[] {
+            resources.GetString("comboSortType.Items"),
+            resources.GetString("comboSortType.Items1"),
+            resources.GetString("comboSortType.Items2"),
+            resources.GetString("comboSortType.Items3")});
+            this.comboSortType.Name = "comboSortType";
             // 
             // comboSearchType
             // 
-            comboSearchType.DropDownStyle = ComboBoxStyle.DropDownList;
-            comboSearchType.Font = new Font("Consolas", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            comboSearchType.FormattingEnabled = true;
-            comboSearchType.Items.AddRange(new object[] { "Самый длинный", "Самый короткий", "Самый тяжелый", "Самый легкий", "Самый быстрый", "Самый медленный", "Длиннее чем", "Короче чем", "Тяжелее чем", "Легче чем", "Быстрее чем", "Медленнее чем", "Совпадение" });
-            comboSearchType.Location = new Point(242, 100);
-            comboSearchType.Margin = new Padding(4);
-            comboSearchType.Name = "comboSearchType";
-            comboSearchType.Size = new Size(200, 23);
-            comboSearchType.TabIndex = 17;
+            this.comboSearchType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            resources.ApplyResources(this.comboSearchType, "comboSearchType");
+            this.comboSearchType.FormattingEnabled = true;
+            this.comboSearchType.Items.AddRange(new object[] {
+            resources.GetString("comboSearchType.Items"),
+            resources.GetString("comboSearchType.Items1"),
+            resources.GetString("comboSearchType.Items2"),
+            resources.GetString("comboSearchType.Items3"),
+            resources.GetString("comboSearchType.Items4"),
+            resources.GetString("comboSearchType.Items5"),
+            resources.GetString("comboSearchType.Items6"),
+            resources.GetString("comboSearchType.Items7"),
+            resources.GetString("comboSearchType.Items8"),
+            resources.GetString("comboSearchType.Items9"),
+            resources.GetString("comboSearchType.Items10"),
+            resources.GetString("comboSearchType.Items11"),
+            resources.GetString("comboSearchType.Items12")});
+            this.comboSearchType.Name = "comboSearchType";
             // 
             // textSearchValue
             // 
-            textSearchValue.Location = new Point(242, 175);
-            textSearchValue.Margin = new Padding(4);
-            textSearchValue.Name = "textSearchValue";
-            textSearchValue.Size = new Size(200, 30);
-            textSearchValue.TabIndex = 18;
+            resources.ApplyResources(this.textSearchValue, "textSearchValue");
+            this.textSearchValue.Name = "textSearchValue";
             // 
             // groupCreation
             // 
-            groupCreation.Controls.Add(buttonAddDepo);
-            groupCreation.Controls.Add(buttonAddTrain);
-            groupCreation.Controls.Add(text_wagon);
-            groupCreation.Controls.Add(label1);
-            groupCreation.Controls.Add(text_train);
-            groupCreation.Controls.Add(label2);
-            groupCreation.Location = new Point(15, 12);
-            groupCreation.Name = "groupCreation";
-            groupCreation.Size = new Size(444, 141);
-            groupCreation.TabIndex = 19;
-            groupCreation.TabStop = false;
-            groupCreation.Text = "Добавление";
+            this.groupCreation.Controls.Add(this.buttonAddDepo);
+            this.groupCreation.Controls.Add(this.buttonAddTrain);
+            this.groupCreation.Controls.Add(this.text_wagon);
+            this.groupCreation.Controls.Add(this.label1);
+            this.groupCreation.Controls.Add(this.text_train);
+            this.groupCreation.Controls.Add(this.label2);
+            resources.ApplyResources(this.groupCreation, "groupCreation");
+            this.groupCreation.Name = "groupCreation";
+            this.groupCreation.TabStop = false;
             // 
             // label3
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(5, 26);
-            label3.Margin = new Padding(4, 0, 4, 0);
-            label3.Name = "label3";
-            label3.Size = new Size(160, 22);
-            label3.TabIndex = 7;
-            label3.Text = "Выберите поезд:";
+            resources.ApplyResources(this.label3, "label3");
+            this.label3.Name = "label3";
             // 
             // label4
             // 
-            label4.AutoSize = true;
-            label4.Location = new Point(238, 26);
-            label4.Margin = new Padding(4, 0, 4, 0);
-            label4.Name = "label4";
-            label4.Size = new Size(150, 22);
-            label4.TabIndex = 8;
-            label4.Text = "Выберите депо:";
+            resources.ApplyResources(this.label4, "label4");
+            this.label4.Name = "label4";
             // 
             // groupSelection
             // 
-            groupSelection.Controls.Add(label4);
-            groupSelection.Controls.Add(label3);
-            groupSelection.Controls.Add(comboTrains);
-            groupSelection.Controls.Add(comboDepoes);
-            groupSelection.Location = new Point(15, 170);
-            groupSelection.Name = "groupSelection";
-            groupSelection.Size = new Size(444, 100);
-            groupSelection.TabIndex = 20;
-            groupSelection.TabStop = false;
-            groupSelection.Text = "Выбор";
+            this.groupSelection.Controls.Add(this.label4);
+            this.groupSelection.Controls.Add(this.label3);
+            this.groupSelection.Controls.Add(this.comboTrains);
+            this.groupSelection.Controls.Add(this.comboDepoes);
+            resources.ApplyResources(this.groupSelection, "groupSelection");
+            this.groupSelection.Name = "groupSelection";
+            this.groupSelection.TabStop = false;
             // 
             // groupFunction
             // 
-            groupFunction.Controls.Add(label6);
-            groupFunction.Controls.Add(label5);
-            groupFunction.Controls.Add(buttonSearch);
-            groupFunction.Controls.Add(buttonSort);
-            groupFunction.Controls.Add(comboSortType);
-            groupFunction.Controls.Add(comboSearchType);
-            groupFunction.Controls.Add(textSearchValue);
-            groupFunction.Location = new Point(475, 12);
-            groupFunction.Name = "groupFunction";
-            groupFunction.Size = new Size(449, 258);
-            groupFunction.TabIndex = 21;
-            groupFunction.TabStop = false;
-            groupFunction.Text = "Функции";
+            this.groupFunction.Controls.Add(this.label6);
+            this.groupFunction.Controls.Add(this.label5);
+            this.groupFunction.Controls.Add(this.buttonSearch);
+            this.groupFunction.Controls.Add(this.buttonSort);
+            this.groupFunction.Controls.Add(this.comboSortType);
+            this.groupFunction.Controls.Add(this.comboSearchType);
+            this.groupFunction.Controls.Add(this.textSearchValue);
+            resources.ApplyResources(this.groupFunction, "groupFunction");
+            this.groupFunction.Name = "groupFunction";
+            this.groupFunction.TabStop = false;
             // 
             // label6
             // 
-            label6.AutoSize = true;
-            label6.Location = new Point(12, 26);
-            label6.Margin = new Padding(4, 0, 4, 0);
-            label6.Name = "label6";
-            label6.Size = new Size(380, 22);
-            label6.TabIndex = 19;
-            label6.Text = "Необходимо выбрать депо в окне выбора";
+            resources.ApplyResources(this.label6, "label6");
+            this.label6.Name = "label6";
             // 
             // label5
             // 
-            label5.AutoSize = true;
-            label5.Location = new Point(242, 127);
-            label5.Margin = new Padding(4, 0, 4, 0);
-            label5.Name = "label5";
-            label5.Size = new Size(170, 44);
-            label5.TabIndex = 9;
-            label5.Text = "Введите значение\r\n для поиска";
+            resources.ApplyResources(this.label5, "label5");
+            this.label5.Name = "label5";
             // 
             // groupAdmin
             // 
-            groupAdmin.Controls.Add(label7);
-            groupAdmin.Controls.Add(buttonDelDepo);
-            groupAdmin.Controls.Add(buttonAddToDepo);
-            groupAdmin.Controls.Add(buttonDelFromDepo);
-            groupAdmin.Controls.Add(buttonDelTrain);
-            groupAdmin.Location = new Point(253, 297);
-            groupAdmin.Name = "groupAdmin";
-            groupAdmin.Size = new Size(439, 173);
-            groupAdmin.TabIndex = 22;
-            groupAdmin.TabStop = false;
-            groupAdmin.Text = "Управление";
+            this.groupAdmin.Controls.Add(this.label7);
+            this.groupAdmin.Controls.Add(this.buttonDelDepo);
+            this.groupAdmin.Controls.Add(this.buttonAddToDepo);
+            this.groupAdmin.Controls.Add(this.buttonDelFromDepo);
+            this.groupAdmin.Controls.Add(this.buttonDelTrain);
+            resources.ApplyResources(this.groupAdmin, "groupAdmin");
+            this.groupAdmin.Name = "groupAdmin";
+            this.groupAdmin.TabStop = false;
             // 
             // label7
             // 
-            label7.AutoSize = true;
-            label7.Location = new Point(14, 26);
-            label7.Margin = new Padding(4, 0, 4, 0);
-            label7.Name = "label7";
-            label7.Size = new Size(380, 22);
-            label7.TabIndex = 20;
-            label7.Text = "Необходимо выбрать депо в окне выбора";
+            resources.ApplyResources(this.label7, "label7");
+            this.label7.Name = "label7";
+            // 
+            // bt_changeLanguage
+            // 
+            resources.ApplyResources(this.bt_changeLanguage, "bt_changeLanguage");
+            this.bt_changeLanguage.Name = "bt_changeLanguage";
+            this.bt_changeLanguage.UseVisualStyleBackColor = true;
+            this.bt_changeLanguage.Click += new System.EventHandler(this.bt_changeLanguage_Click);
             // 
             // ViewForm
             // 
-            AutoScaleDimensions = new SizeF(10F, 22F);
-            AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.BurlyWood;
-            ClientSize = new Size(1490, 903);
-            Controls.Add(groupAdmin);
-            Controls.Add(groupFunction);
-            Controls.Add(groupSelection);
-            Controls.Add(groupCreation);
-            Controls.Add(buttonCleanScr);
-            Controls.Add(richTextView);
-            Font = new Font("Consolas", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            Icon = (Icon)resources.GetObject("$this.Icon");
-            Margin = new Padding(4);
-            Name = "ViewForm";
-            Text = "Депо";
-            groupCreation.ResumeLayout(false);
-            groupCreation.PerformLayout();
-            groupSelection.ResumeLayout(false);
-            groupSelection.PerformLayout();
-            groupFunction.ResumeLayout(false);
-            groupFunction.PerformLayout();
-            groupAdmin.ResumeLayout(false);
-            groupAdmin.PerformLayout();
-            ResumeLayout(false);
+            resources.ApplyResources(this, "$this");
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.BurlyWood;
+            this.Controls.Add(this.bt_changeLanguage);
+            this.Controls.Add(this.groupAdmin);
+            this.Controls.Add(this.groupFunction);
+            this.Controls.Add(this.groupSelection);
+            this.Controls.Add(this.groupCreation);
+            this.Controls.Add(this.buttonCleanScr);
+            this.Controls.Add(this.richTextView);
+            this.Name = "ViewForm";
+            this.groupCreation.ResumeLayout(false);
+            this.groupCreation.PerformLayout();
+            this.groupSelection.ResumeLayout(false);
+            this.groupSelection.PerformLayout();
+            this.groupFunction.ResumeLayout(false);
+            this.groupFunction.PerformLayout();
+            this.groupAdmin.ResumeLayout(false);
+            this.groupAdmin.PerformLayout();
+            this.ResumeLayout(false);
+
         }
 
         #endregion
@@ -424,5 +332,6 @@
         private Label label5;
         private GroupBox groupAdmin;
         private Label label7;
+        private Button bt_changeLanguage;
     }
 }
