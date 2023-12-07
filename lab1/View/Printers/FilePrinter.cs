@@ -20,7 +20,7 @@ namespace RailwayTransport.View.Printers
         {
             try
             {
-                File.AppendAllText(_filePath, data + Environment.NewLine);
+                File.WriteAllText(_filePath, data);
             }
             catch (Exception ex)
             {

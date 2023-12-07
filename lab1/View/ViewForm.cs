@@ -20,7 +20,6 @@ namespace RailwayTransport.View
         Dictionary<string, Train> trains = new Dictionary<string, Train>();
         Dictionary<string, Depo> depoes = new Dictionary<string, Depo>();
         DepoController _depoController;
-
         int countTrains = 0, countDepoes = 0;
 
         public bool LanguageChanged { get; set; }
@@ -32,6 +31,24 @@ namespace RailwayTransport.View
             InitializeComponent();
             _depoController = new DepoController();
             CurrentLanguage = language;
+            
+            if (File.Exists("json/saveTrains.json"))
+            {
+                trains = new RailwaySerializer("saveTrains").DeserializeTrainDict();
+                foreach (var train in trains)
+                {
+                    comboTrains.Items.Add(train.Key);
+                }
+            }
+
+            if (File.Exists("json/saveDepoes.json"))
+            {
+                depoes = new RailwaySerializer("saveDepoes").DeserializeDepoDict();
+                foreach (var depo in depoes)
+                {
+                    comboDepoes.Items.Add(depo.Key);
+                }
+            }
         }
 
         private void buttonAddTrain_Click(object sender, EventArgs e)
@@ -70,7 +87,7 @@ namespace RailwayTransport.View
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void buttonAddTrainToDepo_Click(object sender, EventArgs e)
         {
             try
             {
@@ -95,7 +112,7 @@ namespace RailwayTransport.View
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void buttonRemoveTrainFromDepo_Click(object sender, EventArgs e)
         {
             try
             {
@@ -218,7 +235,21 @@ namespace RailwayTransport.View
             this.Close();
         }
 
-       
+        private void ViewForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            new RailwaySerializer("saveTrains").SerializeTrainDict(trains);
+            new RailwaySerializer("saveDepoes").SerializeDepoDict(depoes);
+
+            if (trains.Count == 0)
+            {
+                File.Delete("json/saveTrains.json");
+            }
+
+            if (depoes.Count == 0)
+            {
+                File.Delete("json/saveDepoes.json");
+            }
+        }
 
         private void buttonSearch_Click(object sender, EventArgs e)
         {

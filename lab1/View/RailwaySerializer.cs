@@ -63,5 +63,33 @@ namespace RailwayTransport.View
 
             return JsonConvert.DeserializeObject<Depo>(json, new JsonSerializerSettings() { TypeNameHandling = TypeNameHandling.Auto });
         }
+
+        public void SerializeDepoDict(Dictionary<string, Depo> depoes)
+        {
+            var json = JsonConvert.SerializeObject(depoes, Formatting.Indented, new JsonSerializerSettings() { TypeNameHandling = TypeNameHandling.Auto });
+
+            _filePrinter.Print(json);
+        }
+
+        public Dictionary<string, Depo> DeserializeDepoDict()
+        {
+            var json = File.ReadAllText($"json/{_fileName}.json");
+
+            return JsonConvert.DeserializeObject<Dictionary<string, Depo>>(json, new JsonSerializerSettings() { TypeNameHandling = TypeNameHandling.Auto });
+        }
+
+        public void SerializeTrainDict(Dictionary<string, Train> trains)
+        {
+            var json = JsonConvert.SerializeObject(trains, Formatting.Indented, new JsonSerializerSettings() { TypeNameHandling = TypeNameHandling.Auto });
+
+            _filePrinter.Print(json);
+        }
+
+        public Dictionary<string, Train> DeserializeTrainDict()
+        {
+            var json = File.ReadAllText($"json/{_fileName}.json");
+
+            return JsonConvert.DeserializeObject<Dictionary<string, Train>>(json, new JsonSerializerSettings() { TypeNameHandling = TypeNameHandling.Auto });
+        }
     }
 }
