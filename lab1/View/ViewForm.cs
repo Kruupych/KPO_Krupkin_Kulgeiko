@@ -218,10 +218,7 @@ namespace RailwayTransport.View
             this.Close();
         }
 
-        private void buttonAddTrain_Click_1(object sender, EventArgs e)
-        {
-
-        }
+       
 
         private void buttonSearch_Click(object sender, EventArgs e)
         {
