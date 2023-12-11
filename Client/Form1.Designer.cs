@@ -49,10 +49,10 @@
             guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
             textMain = new RichTextBox();
             labelName = new Label();
-            comboBox1 = new ComboBox();
+            comboTrains = new ComboBox();
             label1 = new Label();
             label2 = new Label();
-            comboBox2 = new ComboBox();
+            comboWagons = new ComboBox();
             guna2GradientButton1 = new Guna.UI2.WinForms.Guna2GradientButton();
             guna2GradientButton2 = new Guna.UI2.WinForms.Guna2GradientButton();
             butttonAddW = new Guna.UI2.WinForms.Guna2Button();
@@ -100,14 +100,15 @@
             labelName.TabIndex = 4;
             labelName.Text = "Нигде";
             // 
-            // comboBox1
+            // comboTrains
             // 
-            comboBox1.Font = new Font("Consolas", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(12, 44);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(196, 30);
-            comboBox1.TabIndex = 5;
+            comboTrains.Font = new Font("Consolas", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            comboTrains.FormattingEnabled = true;
+            comboTrains.Location = new Point(12, 44);
+            comboTrains.Name = "comboTrains";
+            comboTrains.Size = new Size(196, 30);
+            comboTrains.TabIndex = 5;
+            comboTrains.Click += comboTrains_Click;
             // 
             // label1
             // 
@@ -129,14 +130,14 @@
             label2.TabIndex = 8;
             label2.Text = "Выберите вагон:";
             // 
-            // comboBox2
+            // comboWagons
             // 
-            comboBox2.Font = new Font("Consolas", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(12, 107);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(196, 30);
-            comboBox2.TabIndex = 9;
+            comboWagons.Font = new Font("Consolas", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            comboWagons.FormattingEnabled = true;
+            comboWagons.Location = new Point(12, 107);
+            comboWagons.Name = "comboWagons";
+            comboWagons.Size = new Size(196, 30);
+            comboWagons.TabIndex = 9;
             // 
             // guna2GradientButton1
             // 
@@ -269,10 +270,10 @@
             Controls.Add(butttonAddW);
             Controls.Add(guna2GradientButton2);
             Controls.Add(guna2GradientButton1);
-            Controls.Add(comboBox2);
+            Controls.Add(comboWagons);
             Controls.Add(label2);
             Controls.Add(label1);
-            Controls.Add(comboBox1);
+            Controls.Add(comboTrains);
             Controls.Add(labelName);
             Controls.Add(textMain);
             Controls.Add(guna2ControlBox1);
@@ -294,9 +295,9 @@
         private RichTextBox textMain;
         private Label label2;
         private Label label1;
-        private ComboBox comboBox1;
+        private ComboBox comboTrains;
         private Label labelName;
-        private ComboBox comboBox2;
+        private ComboBox comboWagons;
         private Guna.UI2.WinForms.Guna2GradientButton guna2GradientButton2;
         private Guna.UI2.WinForms.Guna2GradientButton guna2GradientButton1;
         private Guna.UI2.WinForms.Guna2Button butttonAddW;
