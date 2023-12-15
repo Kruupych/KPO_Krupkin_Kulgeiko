@@ -1,9 +1,4 @@
 ﻿using Locomotive;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace RailwayTransport.Controller.Interfaces
 {
@@ -11,8 +6,15 @@ namespace RailwayTransport.Controller.Interfaces
     {
         ILocomotive CreateLocomotive();
 
-        Train CreateTrain(int wagons, bool isPassenger, bool isLoaded);
+        ILocomotive CreateLocomotive(double power);
 
+        Train CreateTrain(int wagonsAmount, bool isPassenger, bool isLoaded);
+
+        Train CreateTrain(string name, int wagonsAmount, double power, int loadPercentage, CargoWagon.Resource resource);
+
+        Train CreateTrain(string name, int wagonsAmount, double power, int pessangersFillness);
+
+        Train CreateTrain(int loadPercentage);
         Train CreateTrain();
         Train CreateEmptyTrain();
     }

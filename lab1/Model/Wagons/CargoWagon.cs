@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Text.Json.Serialization;
@@ -10,7 +11,18 @@ namespace RailwayTransport
     {
         public enum Resource
         {
-            Nothing, Coal, Wood, AgroCombine, Fuel, Animals
+            [Description("Ничего")]
+            Nothing = 0,
+            [Description("Уголь")]
+            Coal,
+            [Description("Дерево")]
+            Wood,
+            [Description("Агрокультуры")]
+            AgroCombine,
+            [Description("Топливо")]
+            Fuel,
+            [Description("Животных")]
+            Animals
         }
 
         public double Length { get; private set; }
@@ -19,6 +31,8 @@ namespace RailwayTransport
         public double Weight { get; private set; }
         public double Payload { get; private set; }
         public Resource ResourceType { get; private set; }
+        public int LoadPercentage { get; private set; }
+
         public static int TotalCount { get; private set; }
 
         public CargoWagon()
@@ -34,14 +48,13 @@ namespace RailwayTransport
         }
 
         [JsonConstructor]
-        public CargoWagon(double length, double emptyWeight, double payload)
+        public CargoWagon(double length, double emptyWeight, double payload, Resource resourceType = Resource.Nothing, int loadPercentage = 0)
         {
             Length = length;
             EmptyWeight = emptyWeight;
             Weight = emptyWeight;
             Payload = payload;
-
-            ResourceType = Resource.Nothing;
+            Load(resourceType, loadPercentage);
             IsPassenger = false;
             TotalCount++;
         }
@@ -72,7 +85,7 @@ namespace RailwayTransport
         public void Load(Resource resource, int loadPercentage)
         {
             ResourceType = resource;
-            loadPercentage = loadPercentage > 100? 100 : loadPercentage < 0 ? 0 : loadPercentage;
+            LoadPercentage = loadPercentage = loadPercentage > 100? 100 : loadPercentage < 0 ? 0 : loadPercentage;
             Weight += Payload * loadPercentage / 100d;
         }
 

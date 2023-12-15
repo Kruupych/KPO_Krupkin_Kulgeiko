@@ -31,6 +31,14 @@ namespace RailwayTransport.Controller.Factories
             return new DieselLocomotive(length, power, weight);
         }
 
+        public ILocomotive CreateLocomotive(double power)
+        {
+            double length = _random.Next(10, 18);
+            double weight = _random.Next(70, 145);
+
+            return new DieselLocomotive(length, power, weight);
+        }
+
         public Train CreateTrain(int amount, bool isPassenger, bool isLoaded)
         {
             var wagonsFactory = new RandomWagonFactory();
@@ -54,6 +62,31 @@ namespace RailwayTransport.Controller.Factories
             var wagons = isPassenger ? wagonsFactory.CreatePassengerWagons(amount, isLoaded) : wagonsFactory.CreateCargoWagons(amount, isLoaded);
 
             return new Train(loco, wagons);
+        }
+
+        public Train CreateTrain(string name, int wagonsAmount, double power, int loadPercentage, CargoWagon.Resource resource)
+        {
+            var wagonsFactory = new RandomWagonFactory();
+            var loco = CreateLocomotive(power);
+
+            var wagons = wagonsFactory.CreateCargoWagons(wagonsAmount, loadPercentage, resource);
+
+            return new Train(loco, wagons, name);
+        }
+
+        public Train CreateTrain(string name, int wagonsAmount, double power, int pessangersFillness)
+        {
+            var wagonsFactory = new RandomWagonFactory();
+            var loco = CreateLocomotive(power);
+
+            var wagons = wagonsFactory.CreatePassengerWagons(wagonsAmount, pessangersFillness);
+
+            return new Train(loco, wagons, name);
+        }
+
+        public Train CreateTrain(int loadPercentage)
+        {
+            throw new NotImplementedException();
         }
     }
 }
