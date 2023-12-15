@@ -17,8 +17,10 @@ namespace RailwayTransport
 
         public int PassengersCount => (int)((Weight - EmptyWeight) / 0.07d);
 
+        public int LoadPercentage { get; private set; }
+
         [JsonConstructor]
-        public PassengerWagon(double length, double emptyWeight, int maxPassengers)
+        public PassengerWagon(double length, double emptyWeight, int maxPassengers, int loadPercentage = 0)
         {
             Length = length;
             EmptyWeight = emptyWeight;
@@ -26,6 +28,8 @@ namespace RailwayTransport
             Weight = emptyWeight;
             Payload = maxPassengers;
             TotalCount++;
+
+            Load(loadPercentage);
         }
 
         public PassengerWagon()
@@ -58,10 +62,10 @@ namespace RailwayTransport
             Weight = EmptyWeight;
         }
 
-        public void Load(int passengersCount)
+        public void Load(int loadPercentage)
         {
-            passengersCount = passengersCount > Payload ? Payload : passengersCount < 0 ? 0 : passengersCount;
-            Weight += passengersCount * 0.07d;
+            LoadPercentage = loadPercentage;
+            Weight += loadPercentage * Payload * 0.07d;
         }
 
         public override string ToString()

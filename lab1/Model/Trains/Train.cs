@@ -16,6 +16,7 @@ namespace RailwayTransport
         public double Length { get => GetTotalLength(); }
         public double MaxSpeed { get => _locomotive.CalculateMaxSpeed(TotalWeight); }
         public List<IWagon> Wagons { get => _wagonList; }
+        public string Name { get; private set; }
 
         public ILocomotive Locomotive { get => _locomotive; }
 
@@ -27,8 +28,9 @@ namespace RailwayTransport
         }
 
         [JsonConstructor]
-        public Train(ILocomotive locomotive, IEnumerable<IWagon> wagons) : this(locomotive)
+        public Train(ILocomotive locomotive, IEnumerable<IWagon> wagons, string name = "") : this(locomotive)
         {
+            Name = name;
             AddWagons(wagons);
         }
         public IWagon GetWagonByIndex(int index)

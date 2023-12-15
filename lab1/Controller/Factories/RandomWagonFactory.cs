@@ -37,6 +37,15 @@ namespace RailwayTransport.Controller.Factories
             return wagon;
         }
 
+        public IWagon CreateCargoWagon(int loadPercentage, CargoWagon.Resource resource)
+        {
+            double length = _random.Next(11, 17);
+            double emptyWeight = _random.Next(18, 31);
+            double payLoad = _random.Next(45, 96);
+
+            return new CargoWagon(length, emptyWeight, payLoad, resource, loadPercentage);
+        }
+
         public IEnumerable<IWagon> CreateCargoWagons(int amount, bool isLoaded)
         {
             List<IWagon> cargoWagons = new();
@@ -44,6 +53,18 @@ namespace RailwayTransport.Controller.Factories
             for (int i = 0; i < amount; i++)
             {
                 cargoWagons.Add(CreateCargoWagon(isLoaded));
+            }
+
+            return cargoWagons;
+        }
+
+        public IEnumerable<IWagon> CreateCargoWagons(int amount, int loadPercentage, CargoWagon.Resource resource)
+        {
+            List<IWagon> cargoWagons = new();
+
+            for (int i = 0; i < amount; i++)
+            {
+                cargoWagons.Add(CreateCargoWagon(loadPercentage, resource));
             }
 
             return cargoWagons;
@@ -65,6 +86,15 @@ namespace RailwayTransport.Controller.Factories
             return wagon;
         }
 
+        public IWagon CreatePassengerWagon(int loadPercentage)
+        {
+            double length = _random.Next(20, 30);
+            double emptyWeight = _random.Next(minValue: 40, 70);
+            int maxPassengers = _random.Next(40, 80);
+
+            return new PassengerWagon(length, emptyWeight, maxPassengers, loadPercentage);
+        }
+
         public IEnumerable<IWagon> CreatePassengerWagons(int amount, bool isLoaded)
         {
             List<IWagon> passWagons = new();
@@ -72,6 +102,18 @@ namespace RailwayTransport.Controller.Factories
             for (int i = 0; i < amount; i++)
             {
                 passWagons.Add(CreatePassengerWagon(isLoaded));
+            }
+
+            return passWagons;
+        }
+
+        public IEnumerable<IWagon> CreatePassengerWagons(int amount, int loadPercentage)
+        {
+            List<IWagon> passWagons = new();
+
+            for (int i = 0; i < amount; i++)
+            {
+                passWagons.Add(CreatePassengerWagon(loadPercentage));
             }
 
             return passWagons;
