@@ -38,12 +38,18 @@
             guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(components);
             guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
             groupBox1 = new GroupBox();
+            radioCargo = new RadioButton();
+            radioPas = new RadioButton();
             groupBox2 = new GroupBox();
-            radioButton1 = new RadioButton();
-            radioButton2 = new RadioButton();
-            guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
-            guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
+            percentLoad = new Label();
+            label1 = new Label();
+            trackCarPer = new TrackBar();
+            comboResourceType = new ComboBox();
+            buttonCreateWagon = new Guna.UI2.WinForms.Guna2Button();
+            buttonLoadWagon = new Guna.UI2.WinForms.Guna2Button();
             groupBox1.SuspendLayout();
+            groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)trackCarPer).BeginInit();
             SuspendLayout();
             // 
             // guna2BorderlessForm1
@@ -58,7 +64,7 @@
             guna2ControlBox1.CustomizableEdges = customizableEdges5;
             guna2ControlBox1.FillColor = Color.FromArgb(139, 152, 166);
             guna2ControlBox1.IconColor = Color.White;
-            guna2ControlBox1.Location = new Point(494, -1);
+            guna2ControlBox1.Location = new Point(567, -1);
             guna2ControlBox1.Name = "guna2ControlBox1";
             guna2ControlBox1.ShadowDecoration.CustomizableEdges = customizableEdges6;
             guna2ControlBox1.Size = new Size(45, 29);
@@ -66,88 +72,130 @@
             // 
             // groupBox1
             // 
-            groupBox1.Controls.Add(radioButton2);
-            groupBox1.Controls.Add(radioButton1);
+            groupBox1.Controls.Add(radioCargo);
+            groupBox1.Controls.Add(radioPas);
             groupBox1.Font = new Font("Consolas", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
             groupBox1.Location = new Point(12, 39);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(285, 426);
+            groupBox1.Size = new Size(285, 430);
             groupBox1.TabIndex = 1;
             groupBox1.TabStop = false;
-            groupBox1.Text = "Добавить новый вагон";
+            groupBox1.Text = "Создание";
+            // 
+            // radioCargo
+            // 
+            radioCargo.AutoSize = true;
+            radioCargo.Location = new Point(6, 77);
+            radioCargo.Name = "radioCargo";
+            radioCargo.Size = new Size(168, 26);
+            radioCargo.TabIndex = 1;
+            radioCargo.TabStop = true;
+            radioCargo.Text = "Грузовой вагон";
+            radioCargo.UseVisualStyleBackColor = true;
+            // 
+            // radioPas
+            // 
+            radioPas.AutoSize = true;
+            radioPas.Location = new Point(6, 45);
+            radioPas.Name = "radioPas";
+            radioPas.Size = new Size(208, 26);
+            radioPas.TabIndex = 0;
+            radioPas.TabStop = true;
+            radioPas.Text = "Пассажирский вагон";
+            radioPas.UseVisualStyleBackColor = true;
             // 
             // groupBox2
             // 
+            groupBox2.Controls.Add(percentLoad);
+            groupBox2.Controls.Add(label1);
+            groupBox2.Controls.Add(trackCarPer);
+            groupBox2.Controls.Add(comboResourceType);
             groupBox2.Font = new Font("Consolas", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
             groupBox2.Location = new Point(315, 39);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(207, 426);
+            groupBox2.Size = new Size(285, 430);
             groupBox2.TabIndex = 2;
             groupBox2.TabStop = false;
-            groupBox2.Text = "Заполнить вагон";
+            groupBox2.Text = "Загрузка";
             // 
-            // radioButton1
+            // percentLoad
             // 
-            radioButton1.AutoSize = true;
-            radioButton1.Location = new Point(18, 29);
-            radioButton1.Name = "radioButton1";
-            radioButton1.Size = new Size(148, 26);
-            radioButton1.TabIndex = 0;
-            radioButton1.TabStop = true;
-            radioButton1.Text = "Пассажирский";
-            radioButton1.UseVisualStyleBackColor = true;
+            percentLoad.AutoSize = true;
+            percentLoad.Location = new Point(25, 173);
+            percentLoad.Name = "percentLoad";
+            percentLoad.Size = new Size(20, 22);
+            percentLoad.TabIndex = 7;
+            percentLoad.Text = "0";
             // 
-            // radioButton2
+            // label1
             // 
-            radioButton2.AutoSize = true;
-            radioButton2.Location = new Point(18, 61);
-            radioButton2.Name = "radioButton2";
-            radioButton2.Size = new Size(108, 26);
-            radioButton2.TabIndex = 1;
-            radioButton2.TabStop = true;
-            radioButton2.Text = "Грузовой";
-            radioButton2.UseVisualStyleBackColor = true;
+            label1.AutoSize = true;
+            label1.Location = new Point(15, 91);
+            label1.Name = "label1";
+            label1.Size = new Size(240, 22);
+            label1.TabIndex = 4;
+            label1.Text = "Процент загрузки вагона";
             // 
-            // guna2Button1
+            // trackCarPer
             // 
-            guna2Button1.CustomizableEdges = customizableEdges3;
-            guna2Button1.DisabledState.BorderColor = Color.DarkGray;
-            guna2Button1.DisabledState.CustomBorderColor = Color.DarkGray;
-            guna2Button1.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            guna2Button1.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            guna2Button1.Font = new Font("Consolas", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            guna2Button1.ForeColor = Color.White;
-            guna2Button1.Location = new Point(30, 474);
-            guna2Button1.Name = "guna2Button1";
-            guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            guna2Button1.Size = new Size(180, 45);
-            guna2Button1.TabIndex = 3;
-            guna2Button1.Text = "Добавить";
+            trackCarPer.Location = new Point(15, 125);
+            trackCarPer.Maximum = 100;
+            trackCarPer.Name = "trackCarPer";
+            trackCarPer.Size = new Size(264, 45);
+            trackCarPer.TabIndex = 3;
+            trackCarPer.Scroll += trackCarPer_Scroll;
             // 
-            // guna2Button2
+            // comboResourceType
             // 
-            guna2Button2.CustomizableEdges = customizableEdges1;
-            guna2Button2.DisabledState.BorderColor = Color.DarkGray;
-            guna2Button2.DisabledState.CustomBorderColor = Color.DarkGray;
-            guna2Button2.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            guna2Button2.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            guna2Button2.Font = new Font("Consolas", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            guna2Button2.ForeColor = Color.White;
-            guna2Button2.Location = new Point(342, 471);
-            guna2Button2.Name = "guna2Button2";
-            guna2Button2.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            guna2Button2.Size = new Size(180, 45);
-            guna2Button2.TabIndex = 4;
-            guna2Button2.Text = "Загрузить";
+            comboResourceType.FormattingEnabled = true;
+            comboResourceType.Items.AddRange(new object[] { "Пустой грузовой", "Уголь", "Дерево", "Сельхозтехника", "Топливо", "Животные" });
+            comboResourceType.Location = new Point(15, 44);
+            comboResourceType.Name = "comboResourceType";
+            comboResourceType.Size = new Size(264, 30);
+            comboResourceType.TabIndex = 0;
+            // 
+            // buttonCreateWagon
+            // 
+            buttonCreateWagon.CustomizableEdges = customizableEdges3;
+            buttonCreateWagon.DisabledState.BorderColor = Color.DarkGray;
+            buttonCreateWagon.DisabledState.CustomBorderColor = Color.DarkGray;
+            buttonCreateWagon.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            buttonCreateWagon.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            buttonCreateWagon.Font = new Font("Consolas", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            buttonCreateWagon.ForeColor = Color.White;
+            buttonCreateWagon.Location = new Point(12, 475);
+            buttonCreateWagon.Name = "buttonCreateWagon";
+            buttonCreateWagon.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            buttonCreateWagon.Size = new Size(285, 45);
+            buttonCreateWagon.TabIndex = 3;
+            buttonCreateWagon.Text = "Добавить новый вагон";
+            buttonCreateWagon.Click += buttonCreateWagon_Click;
+            // 
+            // buttonLoadWagon
+            // 
+            buttonLoadWagon.CustomizableEdges = customizableEdges1;
+            buttonLoadWagon.DisabledState.BorderColor = Color.DarkGray;
+            buttonLoadWagon.DisabledState.CustomBorderColor = Color.DarkGray;
+            buttonLoadWagon.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            buttonLoadWagon.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            buttonLoadWagon.Font = new Font("Consolas", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            buttonLoadWagon.ForeColor = Color.White;
+            buttonLoadWagon.Location = new Point(315, 475);
+            buttonLoadWagon.Name = "buttonLoadWagon";
+            buttonLoadWagon.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            buttonLoadWagon.Size = new Size(285, 45);
+            buttonLoadWagon.TabIndex = 4;
+            buttonLoadWagon.Text = "Загрузить существующий вагон";
+            buttonLoadWagon.Click += buttonLoadWagon_Click;
             // 
             // Form3
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(192, 255, 192);
-            ClientSize = new Size(537, 528);
-            Controls.Add(guna2Button2);
-            Controls.Add(guna2Button1);
+            ClientSize = new Size(610, 528);
+            Controls.Add(buttonLoadWagon);
+            Controls.Add(buttonCreateWagon);
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
             Controls.Add(guna2ControlBox1);
@@ -156,6 +204,9 @@
             Text = "Form3";
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
+            groupBox2.ResumeLayout(false);
+            groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)trackCarPer).EndInit();
             ResumeLayout(false);
         }
 
@@ -165,9 +216,13 @@
         private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox1;
         private GroupBox groupBox1;
         private GroupBox groupBox2;
-        private Guna.UI2.WinForms.Guna2Button guna2Button2;
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
-        private RadioButton radioButton2;
-        private RadioButton radioButton1;
+        private Guna.UI2.WinForms.Guna2Button buttonLoadWagon;
+        private Guna.UI2.WinForms.Guna2Button buttonCreateWagon;
+        private ComboBox comboResourceType;
+        private Label label1;
+        private TrackBar trackCarPer;
+        private Label percentLoad;
+        private RadioButton radioCargo;
+        private RadioButton radioPas;
     }
 }

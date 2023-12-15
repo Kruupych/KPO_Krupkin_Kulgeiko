@@ -2,7 +2,9 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.AccessControl;
 using System.Text;
+using static RailwayTransport.CargoWagon;
 
 namespace RailwayTransport
 {
@@ -61,6 +63,14 @@ namespace RailwayTransport
         public void Load(int passengersCount)
         {
             passengersCount = passengersCount > Payload ? Payload : passengersCount < 0 ? 0 : passengersCount;
+            Weight += passengersCount * 0.07d;
+        }
+
+        public void LoadPerc(int loadPercentage)
+        {           
+            int passengersCount;
+            loadPercentage = loadPercentage > 100 ? 100 : loadPercentage < 0 ? 0 : loadPercentage;
+            passengersCount = Payload * loadPercentage/100;
             Weight += passengersCount * 0.07d;
         }
 

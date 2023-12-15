@@ -50,7 +50,7 @@ namespace RailwayTransport.Controller.Factories
             int amount = _random.Next(5, 40);
             bool isPassenger = _random.Next(0, 2) == 0 ? false : true;
             bool isLoaded = _random.Next(0, 2) == 0 ? false : true;
-
+            
             var wagons = isPassenger ? wagonsFactory.CreatePassengerWagons(amount, isLoaded) : wagonsFactory.CreateCargoWagons(amount, isLoaded);
 
             return new Train(loco, wagons);
