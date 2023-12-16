@@ -8,7 +8,6 @@ namespace Client
         public Dictionary<string, Train> Trains;
         public Dictionary<string, IWagon> Wagons;
         public Dictionary<string, IWagon> WagonsOnStation;
-        //public List<IWagon> freeWagons; // свободные вагоны, после включения в состав поезда удаляются из списка
         Network connection;
         public Form1()
         {
@@ -22,7 +21,6 @@ namespace Client
             Trains = new Dictionary<string, Train>();
             Wagons = new Dictionary<string, IWagon>();
             WagonsOnStation = new Dictionary<string, IWagon>();
-            //freeWagons = new List<IWagon>();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -45,7 +43,7 @@ namespace Client
         private void timer1_Tick(object sender, EventArgs e)
         {
             regenerateTrains();
-            regenerateFreeWagons();    
+            regenerateFreeWagons();
         }
 
         private void butttonAddW_Click(object sender, EventArgs e)
@@ -55,21 +53,39 @@ namespace Client
             {
                 CargoWagon cw;
                 PassengerWagon pw;
-                if (Wagons[comboWagons.SelectedItem.ToString()].IsPassenger == false)
+                if (radioWagon.Checked)
                 {
-                    cw = new CargoWagon((CargoWagon)Wagons[comboWagons.SelectedItem.ToString()]);
-                    //Wagons[comboWagons.SelectedItem.ToString()] = cw;
-                    loadingWagon = new Form3(cw);
+                    if (Wagons[comboWagons.SelectedItem.ToString()].IsPassenger == false)
+                    {
+                        cw = new CargoWagon((CargoWagon)Wagons[comboWagons.SelectedItem.ToString()]);
+                        loadingWagon = new Form3(cw);
+                    }
+                    else
+                    {
+                        pw = new PassengerWagon((PassengerWagon)Wagons[comboWagons.SelectedItem.ToString()]);
+                        loadingWagon = new Form3(pw);
+                    }
+                    loadingWagon.ShowDialog(this);
+                    IWagon wagon = loadingWagon.getCurrentWagon();
+                    Wagons[comboWagons.SelectedItem.ToString()] = wagon;
                 }
                 else
                 {
-                    pw = new PassengerWagon((PassengerWagon)Wagons[comboWagons.SelectedItem.ToString()]);
-                    //Wagons[comboWagons.SelectedItem.ToString()] = pw;
-                    loadingWagon = new Form3(pw);
+                    if (WagonsOnStation[comboFreeWagons.SelectedItem.ToString()].IsPassenger == false)
+                    {
+                        cw = new CargoWagon((CargoWagon)WagonsOnStation[comboFreeWagons.SelectedItem.ToString()]);
+                        loadingWagon = new Form3(cw);
+                    }
+                    else
+                    {
+                        pw = new PassengerWagon((PassengerWagon)WagonsOnStation[comboFreeWagons.SelectedItem.ToString()]);
+                        loadingWagon = new Form3(pw);
+                    }
+                    loadingWagon.ShowDialog(this);
+                    IWagon wagon = loadingWagon.getCurrentWagon();
+                    WagonsOnStation[comboFreeWagons.SelectedItem.ToString()] = wagon;
                 }
-                loadingWagon.ShowDialog(this);
-                IWagon wagon = loadingWagon.getCurrentWagon();
-                Wagons[comboWagons.SelectedItem.ToString()] = wagon;
+
             }
             else
             {
@@ -86,7 +102,11 @@ namespace Client
 
         private void regenerateWagons()
         {
-            if (comboTrains.SelectedText == "")
+            if (comboTrains.SelectedItem == null)
+            {
+                return;
+            }
+            if (string.IsNullOrEmpty(comboTrains.SelectedItem.ToString()))
             {
                 return;
             }
@@ -99,10 +119,6 @@ namespace Client
             {
                 Wagons.Add("Вагон " + i, updatedWagons[i - 1]);
             }
-            //for (int j = 0; i <= freeWagons.Count; i++, j++)
-            //{
-            //    Wagons.Add("Вагон " + i, freeWagons[j]);
-            //}
         }
         private void regenerateFreeWagons()
         {
@@ -136,20 +152,41 @@ namespace Client
             regenerateWagons();
             CargoWagon cw;
             PassengerWagon pw;
-            if (Wagons[comboWagons.SelectedItem.ToString()].IsPassenger == false)
+            if (radioWagon.Checked)
             {
-                cw = new CargoWagon((CargoWagon)Wagons[comboWagons.SelectedItem.ToString()]);
-                textMain.Text += cw.ResourceType.ToString();
-                cw.Unload();
-                Wagons[comboWagons.SelectedItem.ToString()] = cw;
+                if (Wagons[comboWagons.SelectedItem.ToString()].IsPassenger == false)
+                {
+                    cw = new CargoWagon((CargoWagon)Wagons[comboWagons.SelectedItem.ToString()]);
+                    textMain.Text += cw.ResourceType.ToString();
+                    cw.Unload();
+                    Wagons[comboWagons.SelectedItem.ToString()] = cw;
+                }
+                else
+                {
+                    pw = new PassengerWagon((PassengerWagon)Wagons[comboWagons.SelectedItem.ToString()]);
+                    textMain.Text += pw.PassengersCount.ToString();
+                    pw.Unload();
+                    Wagons[comboWagons.SelectedItem.ToString()] = pw;
+                }
             }
             else
             {
-                pw = new PassengerWagon((PassengerWagon)Wagons[comboWagons.SelectedItem.ToString()]);
-                textMain.Text += pw.PassengersCount.ToString();
-                pw.Unload();
-                Wagons[comboWagons.SelectedItem.ToString()] = pw;
+                if (WagonsOnStation[comboFreeWagons.SelectedItem.ToString()].IsPassenger == false)
+                {
+                    cw = new CargoWagon((CargoWagon)WagonsOnStation[comboFreeWagons.SelectedItem.ToString()]);
+                    textMain.Text += cw.ResourceType.ToString();
+                    cw.Unload();
+                    WagonsOnStation[comboFreeWagons.SelectedItem.ToString()] = cw;
+                }
+                else
+                {
+                    pw = new PassengerWagon((PassengerWagon)WagonsOnStation[comboFreeWagons.SelectedItem.ToString()]);
+                    textMain.Text += pw.PassengersCount.ToString();
+                    pw.Unload();
+                    WagonsOnStation[comboFreeWagons.SelectedItem.ToString()] = pw;
+                }
             }
+
 
         }
 
@@ -172,6 +209,55 @@ namespace Client
         {
             string wagonInfo = WagonsOnStation[comboFreeWagons.SelectedItem.ToString()].IsPassenger ? "Количестов пассажиров" + ((PassengerWagon)WagonsOnStation[comboFreeWagons.SelectedItem.ToString()]).PassengersCount.ToString() : ((CargoWagon)WagonsOnStation[comboFreeWagons.SelectedItem.ToString()]).ResourceType.ToString();
             textMain.Text += " " + wagonInfo;
+        }
+
+        private void buttonUnlink_Click(object sender, EventArgs e)
+        {
+            IWagon crw;
+            crw = Wagons[comboWagons.SelectedItem.ToString()];
+            Wagons.Remove(comboWagons.SelectedItem.ToString());
+            comboWagons.Items.Remove(comboWagons.SelectedItem);
+
+            WagonsOnStation.Add($"Вагон {WagonsOnStation.Count + 1}", crw);
+            string myKey = WagonsOnStation.FirstOrDefault(x => x.Value == crw).Key;
+            comboFreeWagons.Items.Add(myKey);
+        }
+
+        private void buttonLink_Click(object sender, EventArgs e)
+        {
+            IWagon crw;
+            int index;
+            crw = WagonsOnStation[comboFreeWagons.SelectedItem.ToString()];
+            WagonsOnStation.Remove(comboFreeWagons.SelectedItem.ToString());
+            comboFreeWagons.Items.Remove(comboFreeWagons.SelectedItem);
+
+            index = int.Parse(Wagons.Last().Key.Split(" ")[1]) + 1;
+            Wagons.Add($"Вагон {index}", crw);
+            string myKey = Wagons.FirstOrDefault(x => x.Value == crw).Key;
+            comboWagons.Items.Add(myKey);
+        }
+
+        private void buttonDelW_Click(object sender, EventArgs e)
+        {
+            WagonsOnStation.Remove(comboFreeWagons.SelectedItem.ToString());
+            comboFreeWagons.Items.Remove(comboFreeWagons.SelectedItem);
+        }
+
+        private void buttonInfo_Click(object sender, EventArgs e)
+        {
+            if (radioInfoWagon.Checked)
+            {
+                textMain.Text+="\n"+ Wagons[comboWagons.SelectedItem.ToString()].ToString();
+            }
+            else
+            {
+                textMain.Text += "\n" + WagonsOnStation[comboFreeWagons.SelectedItem.ToString()].ToString();
+            }
+        }
+
+        private void buttonClrScr_Click(object sender, EventArgs e)
+        {
+            textMain.Clear();
         }
     }
     public class Authorization

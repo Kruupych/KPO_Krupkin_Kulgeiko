@@ -83,6 +83,7 @@ namespace Client
                 pw.LoadPerc(trackCarPer.Value);
                 currentWagon = pw;
             }
+            this.Close();
         }
 
         private void trackCarPer_Scroll(object sender, EventArgs e)
