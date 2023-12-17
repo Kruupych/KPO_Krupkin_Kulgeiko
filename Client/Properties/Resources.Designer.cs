@@ -63,6 +63,26 @@ namespace Client.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap arrow {
+            get {
+                object obj = ResourceManager.GetObject("arrow", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap free_icon_double_arrow_271221 {
+            get {
+                object obj = ResourceManager.GetObject("free-icon-double-arrow-271221", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap recycle_recyclebin_full_delete_trash_1772__1_ {
             get {
                 object obj = ResourceManager.GetObject("recycle_recyclebin_full_delete_trash_1772 (1)", resourceCulture);

@@ -47,10 +47,10 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(components);
             guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(components);
@@ -80,10 +80,10 @@
             radioWagon = new RadioButton();
             pictureBox1 = new PictureBox();
             groupBox3 = new GroupBox();
+            buttonClrScr = new Guna.UI2.WinForms.Guna2Button();
             radioInfoFreeWagon = new RadioButton();
             radioInfoWagon = new RadioButton();
             buttonInfo = new Guna.UI2.WinForms.Guna2Button();
-            buttonClrScr = new Guna.UI2.WinForms.Guna2Button();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             groupBox3.SuspendLayout();
@@ -303,7 +303,6 @@
             comboFreeWagons.Name = "comboFreeWagons";
             comboFreeWagons.Size = new Size(196, 30);
             comboFreeWagons.TabIndex = 17;
-            comboFreeWagons.SelectedIndexChanged += comboFreeWagons_SelectedIndexChanged;
             // 
             // label3
             // 
@@ -397,10 +396,10 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.Image = Properties.Resources.recycle_recyclebin_full_delete_trash_1772__1_;
-            pictureBox1.Location = new Point(223, 134);
+            pictureBox1.Image = Properties.Resources.arrow;
+            pictureBox1.Location = new Point(223, 143);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(72, 68);
+            pictureBox1.Size = new Size(54, 50);
             pictureBox1.TabIndex = 23;
             pictureBox1.TabStop = false;
             // 
@@ -417,6 +416,23 @@
             groupBox3.TabIndex = 25;
             groupBox3.TabStop = false;
             groupBox3.Text = "Информационный блок";
+            // 
+            // buttonClrScr
+            // 
+            buttonClrScr.CustomizableEdges = customizableEdges1;
+            buttonClrScr.DisabledState.BorderColor = Color.DarkGray;
+            buttonClrScr.DisabledState.CustomBorderColor = Color.DarkGray;
+            buttonClrScr.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            buttonClrScr.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            buttonClrScr.Font = new Font("Consolas", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            buttonClrScr.ForeColor = Color.White;
+            buttonClrScr.Location = new Point(188, 61);
+            buttonClrScr.Name = "buttonClrScr";
+            buttonClrScr.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            buttonClrScr.Size = new Size(180, 45);
+            buttonClrScr.TabIndex = 25;
+            buttonClrScr.Text = "Очистить окно";
+            buttonClrScr.Click += buttonClrScr_Click;
             // 
             // radioInfoFreeWagon
             // 
@@ -456,23 +472,6 @@
             buttonInfo.TabIndex = 14;
             buttonInfo.Text = "ИНФО";
             buttonInfo.Click += buttonInfo_Click;
-            // 
-            // buttonClrScr
-            // 
-            buttonClrScr.CustomizableEdges = customizableEdges1;
-            buttonClrScr.DisabledState.BorderColor = Color.DarkGray;
-            buttonClrScr.DisabledState.CustomBorderColor = Color.DarkGray;
-            buttonClrScr.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            buttonClrScr.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            buttonClrScr.Font = new Font("Consolas", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            buttonClrScr.ForeColor = Color.White;
-            buttonClrScr.Location = new Point(188, 61);
-            buttonClrScr.Name = "buttonClrScr";
-            buttonClrScr.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            buttonClrScr.Size = new Size(180, 45);
-            buttonClrScr.TabIndex = 25;
-            buttonClrScr.Text = "Очистить окно";
-            buttonClrScr.Click += buttonClrScr_Click;
             // 
             // Form1
             // 

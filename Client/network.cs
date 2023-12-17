@@ -19,7 +19,6 @@ namespace Client
         
         //задать соединение с сервером депо
         //добавить методы для конвертирования в байты и обратно
-        //Большая проблема с ине=терфейсом вагона. Нельзя преобразовать
         public Network()
         {
             IPEndPoint endpoint = IPEndPoint.Parse("127.0.0.1:8080");
@@ -48,9 +47,13 @@ namespace Client
             var trains = depoController.CreateTrains(5);
             return trains;
         }
-        //public string[] getWagonsList()
-        //{
+        public void SendTrain(Train train)
+        {
 
-        //}
+        }
+        public void TrainArrived(Train train)
+        {
+
+        }
     }
 }
