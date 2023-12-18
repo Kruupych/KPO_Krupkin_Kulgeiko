@@ -102,11 +102,14 @@ namespace RailwayTransport.Controller.Network
             SendDataToClient(Commands.AUTH_RESPONSE + success, client);
         }
 
-        private async Task SendDataToClient(string data, TcpClient client)
+        private void SendDataToClient(string data, TcpClient client)
         {
+            byte[] buffer = Encoding.UTF8.GetBytes(data);
+            byte[] bufferSize = BitConverter.GetBytes(buffer.Length);
+
             NetworkStream stream = client.GetStream();
-            byte[] buffer = Encoding.ASCII.GetBytes(data);
-            await stream.WriteAsync(buffer, 0, buffer.Length);
+            stream.Write(bufferSize, 0, bufferSize.Length); // Сначала отправляем размер
+            stream.Write(buffer, 0, buffer.Length); // Затем отправляем данные
         }
     }
 }
