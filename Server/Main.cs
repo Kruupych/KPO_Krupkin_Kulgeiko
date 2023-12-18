@@ -66,9 +66,13 @@ namespace Server
                 _trainsInPath.Remove(train);
                 _trainsAtStations[station] = train;
 
-                lvTrainsOutOfDepo.Items[train.Name].Group = lvTrainsOutOfDepo.Groups[station];
-                lvTrainsOutOfDepo.Update();
+                lvTrainsOutOfDepo.Invoke(() =>
+                {
+                    lvTrainsOutOfDepo.Items[train.Name].Group = lvTrainsOutOfDepo.Groups[station];
+                    lvTrainsOutOfDepo.Update();
+                });
 
+                
                 LogEvent($"Поезд \"{trainName}\" прибыл на станцию {station}");
                 _depoServer.BroadcastTrains(_trainsInPath);
             }
@@ -82,9 +86,13 @@ namespace Server
 
                 _trainsAtStations[station] = null;
                 _trainsInPath.Add(train);
-                lvTrainsOutOfDepo.Items[train.Name].Group = lvTrainsOutOfDepo.Groups["path"];
-                lvTrainsOutOfDepo.Update();
 
+                lvTrainsOutOfDepo.Invoke(() =>
+                {
+                    lvTrainsOutOfDepo.Items[train.Name].Group = lvTrainsOutOfDepo.Groups["path"];
+                    lvTrainsOutOfDepo.Update();
+                });
+                
                 LogEvent($"Поезд \"{train.Name}\" убыл из станции {station}");
                 _depoServer.BroadcastTrains(_trainsInPath);
             }
@@ -114,7 +122,8 @@ namespace Server
 
         private void LogEvent(string message)
         {
-            tbLogs.Text += $"\r\n[{DateTime.Now}] {message}";
+            tbLogs.Invoke(() => tbLogs.Text += $"\r\n[{DateTime.Now}] {message}");
+            
         }
 
         private void InitMaterialSkin()

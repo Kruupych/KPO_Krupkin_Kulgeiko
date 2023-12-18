@@ -11,12 +11,13 @@ namespace Client
         public Dictionary<string, IWagon> Wagons;
         public Dictionary<string, IWagon> WagonsOnStation;
         //Network connection;
+        bool isArrived;
         Train currentTrain;
         StationClient client;
         public Form1()
         {
             InitializeComponent();
-            client = new StationClient("195.2.80.2");
+            client = new StationClient("127.0.0.1");
             Form2 authorization = new Form2(client);
             mode = "null";
             authorization.ShowDialog(this);
@@ -31,7 +32,7 @@ namespace Client
             //regenerateTrains();
             radioWagon.Checked = true;
             radioInfoWagon.Checked = true;
-
+            isArrived= false;
         }
 
         private void Client_OnAvailableTrainsUpdated(object sender, AvailableTrainsUpdateEventArgs e)
@@ -84,7 +85,7 @@ namespace Client
                 PassengerWagon pw;
                 if (radioWagon.Checked)
                 {
-                    if (comboWagons.Items == null || comboWagons.Items.Count == 0)
+                    if (comboWagons.Items == null || comboWagons.Items.Count == 0 || !isArrived)
                     {
                         return;
                     }
@@ -172,11 +173,15 @@ namespace Client
             int trainCount = updatedTrains.Count;
             for (int i = 1; i <= trainCount; i++)
             {
-                Trains.Add("Поезд " + i, updatedTrains[i - 1]);
+                Trains.Add(updatedTrains[i - 1].Name, updatedTrains[i - 1]);   //исправил имена поездов
 
             }
-            comboTrains.Items.Clear();
-            comboTrains.Items.AddRange(Trains.Keys.ToArray());
+            comboTrains.Invoke(() =>
+            {
+                comboTrains.Items.Clear();
+                comboTrains.Items.AddRange(Trains.Keys.ToArray());
+            });
+            
         }
         private void refreshTrainBeforeSending()
         {
@@ -189,7 +194,7 @@ namespace Client
 
         private void comboTrains_Click(object sender, EventArgs e)
         {
-            refreshTrainBeforeSending();
+            refreshTrainBeforeSending();//возможно тут байпасс
             regenerateWagons();
             comboWagons.Items.Clear();
             comboWagons.Items.AddRange(Wagons.Keys.ToArray());
@@ -202,7 +207,7 @@ namespace Client
             PassengerWagon pw;
             if (radioWagon.Checked)
             {
-                if (comboWagons.Items == null || comboWagons.Items.Count == 0)
+                if (comboWagons.Items == null || comboWagons.Items.Count == 0 || !isArrived)
                 {
                     return;
                 }
@@ -246,8 +251,9 @@ namespace Client
 
         private void buttonGetTrain_Click(object sender, EventArgs e)
         {
-            
+            isArrived = true;
             client.TrainArrived(currentTrain);
+            //перестать запрашивать доступные поезда
             //поезд блокируется для изменения
         }
 
@@ -255,6 +261,7 @@ namespace Client
         {
             refreshTrainBeforeSending();
             client.TrainDeparted(currentTrain);
+            isArrived = false;
             //поезд осовобождается от блокировки
         }
 
@@ -268,7 +275,7 @@ namespace Client
 
         private void buttonUnlink_Click(object sender, EventArgs e)
         {
-            if (comboWagons.Items == null || comboWagons.Items.Count == 0)
+            if (comboWagons.Items == null || comboWagons.Items.Count == 0 || !isArrived)
             {
                 return;
             }
@@ -287,7 +294,7 @@ namespace Client
 
         private void buttonLink_Click(object sender, EventArgs e)
         {
-            if (comboFreeWagons.Items == null || comboFreeWagons.Items.Count == 0)
+            if (comboFreeWagons.Items == null || comboFreeWagons.Items.Count == 0|| !isArrived)
             {
                 return;
             }
@@ -296,7 +303,7 @@ namespace Client
                 IWagon crw;
                 int index;
                 crw = WagonsOnStation[comboFreeWagons.SelectedItem.ToString()];
-                WagonsOnStation.Remove(comboFreeWagons.SelectedItem.ToString());
+                WagonsOnStation.Remove(comboFreeWagons.SelectedItem.ToString());  //проверить при отладке присоединение поезда
                 comboFreeWagons.Items.Remove(comboFreeWagons.SelectedItem);
 
                 index = int.Parse(Wagons.Last().Key.Split(" ")[1]) + 1;
@@ -329,7 +336,7 @@ namespace Client
         {
             if (radioInfoWagon.Checked)
             {
-                if (comboWagons.Items == null || comboWagons.Items.Count == 0)
+                if (comboWagons.Items == null || comboWagons.Items.Count == 0 || !isArrived)
                 {
                     return;
                 }
