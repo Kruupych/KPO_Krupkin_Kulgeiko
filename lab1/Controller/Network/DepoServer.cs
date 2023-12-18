@@ -60,11 +60,22 @@ namespace RailwayTransport.Controller.Network
             {
                 while (true)
                 {
-                    byte[] bytes = new byte[1024];
-                    int bytesRead = stream.Read(bytes, 0, bytes.Length);
-                    string data = Encoding.ASCII.GetString(bytes, 0, bytesRead);
+                    byte[] sizeBuffer = new byte[4];
+                    int bytesRead = stream.Read(sizeBuffer, 0, sizeBuffer.Length);
+                    int messageSize = BitConverter.ToInt32(sizeBuffer, 0);
 
-                    ProcessClientMessage(data, client);
+                    byte[] bytes = new byte[messageSize];
+                    int totalBytesRead = 0;
+
+                    while (totalBytesRead < messageSize)
+                    {
+                        bytesRead = stream.Read(bytes, totalBytesRead, bytes.Length - totalBytesRead);
+                        totalBytesRead += bytesRead;
+                    }
+
+                    string receivedData = Encoding.UTF8.GetString(bytes, 0, totalBytesRead);
+
+                    ProcessClientMessage(receivedData, client);
                 }
             }
             catch (Exception ex)
