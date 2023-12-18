@@ -132,8 +132,11 @@ namespace RailwayTransport.Controller.Network
 
         public void SendData(string data)
         {
-            byte[] bytes = Encoding.ASCII.GetBytes(data);
-            stream.Write(bytes, 0, bytes.Length);
+            byte[] buffer = Encoding.UTF8.GetBytes(data);
+            byte[] bufferSize = BitConverter.GetBytes(buffer.Length);
+
+            stream.Write(bufferSize, 0, bufferSize.Length); // Сначала отправляем размер
+            stream.Write(buffer, 0, buffer.Length); // Затем отправляем данные
         }
     }
 }
