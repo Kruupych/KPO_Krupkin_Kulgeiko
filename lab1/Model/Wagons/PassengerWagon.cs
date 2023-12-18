@@ -22,13 +22,13 @@ namespace RailwayTransport
         public int LoadPercentage { get; private set; }
 
         [JsonConstructor]
-        public PassengerWagon(double length, double emptyWeight, int maxPassengers, int loadPercentage = 0)
+        public PassengerWagon(double length, double emptyWeight, int payLoad, int loadPercentage = 0)
         {
             Length = length;
             EmptyWeight = emptyWeight;
             IsPassenger = true;
             Weight = emptyWeight;
-            Payload = maxPassengers;
+            Payload = payLoad;
             TotalCount++;
 
             Load(loadPercentage);
