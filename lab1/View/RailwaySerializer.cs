@@ -31,25 +31,6 @@ namespace RailwayTransport.View
             _filePrinter = new FilePrinter($"json/{_fileName}.json");
         }
 
-        public void SerializeTrains(List<Train> trains)
-        {
-            if (trains == null || trains.Count == 0)
-            {
-                return;
-            }
-
-            var json = JsonConvert.SerializeObject(trains, Formatting.Indented, new JsonSerializerSettings() { TypeNameHandling = TypeNameHandling.Auto });
-
-            _filePrinter.Print(json);
-        }
-
-        public List<Train> DeserializeTrains()
-        {
-            var json = File.ReadAllText($"json/{_fileName}.json");
-
-            return JsonConvert.DeserializeObject<List<Train>>(json, new JsonSerializerSettings() { TypeNameHandling = TypeNameHandling.Auto });
-        }
-
         public void SerializeDepo(Depo depo)
         {
             var json = JsonConvert.SerializeObject(depo, Formatting.Indented, new JsonSerializerSettings() { TypeNameHandling = TypeNameHandling.Auto });
@@ -78,11 +59,12 @@ namespace RailwayTransport.View
             return JsonConvert.DeserializeObject<Dictionary<string, Depo>>(json, new JsonSerializerSettings() { TypeNameHandling = TypeNameHandling.Auto });
         }
 
-        public void SerializeTrainDict(Dictionary<string, Train> trains)
+        public void SerializeTrainDict(Dictionary<string, Train> trains, bool toFile = true)
         {
             var json = JsonConvert.SerializeObject(trains, Formatting.Indented, new JsonSerializerSettings() { TypeNameHandling = TypeNameHandling.Auto });
 
             _filePrinter.Print(json);
+
         }
 
         public Dictionary<string, Train> DeserializeTrainDict()
@@ -90,6 +72,26 @@ namespace RailwayTransport.View
             var json = File.ReadAllText($"json/{_fileName}.json");
 
             return JsonConvert.DeserializeObject<Dictionary<string, Train>>(json, new JsonSerializerSettings() { TypeNameHandling = TypeNameHandling.Auto });
+        }
+
+        public static string SerializeTrainsList(List<Train> trains)
+        {
+            return JsonConvert.SerializeObject(trains, Formatting.Indented, new JsonSerializerSettings() { TypeNameHandling = TypeNameHandling.Auto });
+        }
+
+        public static List<Train> DeserializeTrainsList(string json)
+        {
+            return JsonConvert.DeserializeObject<List<Train>>(json, new JsonSerializerSettings() { TypeNameHandling = TypeNameHandling.Auto });
+        }
+
+        public static string SerializeTrain(Train train)
+        {
+            return JsonConvert.SerializeObject(train, Formatting.Indented, new JsonSerializerSettings() { TypeNameHandling = TypeNameHandling.Auto });
+        }
+
+        public static Train DeserializeTrain(string json)
+        {
+            return JsonConvert.DeserializeObject<Train>(json, new JsonSerializerSettings() { TypeNameHandling = TypeNameHandling.Auto });
         }
     }
 }

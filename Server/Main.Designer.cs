@@ -59,11 +59,10 @@
             this.materialLabel5 = new MaterialSkin.Controls.MaterialLabel();
             this.tbTrainName = new MaterialSkin.Controls.MaterialTextBox2();
             this.materialCard1 = new MaterialSkin.Controls.MaterialCard();
-            this.materialButton2 = new MaterialSkin.Controls.MaterialButton();
             this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
             this.btDeleteTrain = new MaterialSkin.Controls.MaterialButton();
             this.btAddTrain = new MaterialSkin.Controls.MaterialButton();
-            this.materialButton1 = new MaterialSkin.Controls.MaterialButton();
+            this.btSendTrain = new MaterialSkin.Controls.MaterialButton();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.tbConstructPanelTrainInfo = new MaterialSkin.Controls.MaterialMultiLineTextBox2();
@@ -113,12 +112,12 @@
             this.materialCard3.Controls.Add(this.tbMainPanelTrainInfo);
             this.materialCard3.Depth = 0;
             this.materialCard3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialCard3.Location = new System.Drawing.Point(501, 10);
+            this.materialCard3.Location = new System.Drawing.Point(523, 10);
             this.materialCard3.Margin = new System.Windows.Forms.Padding(14);
             this.materialCard3.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialCard3.Name = "materialCard3";
             this.materialCard3.Padding = new System.Windows.Forms.Padding(14);
-            this.materialCard3.Size = new System.Drawing.Size(507, 570);
+            this.materialCard3.Size = new System.Drawing.Size(485, 570);
             this.materialCard3.TabIndex = 12;
             // 
             // materialLabel6
@@ -166,10 +165,11 @@
             this.lvTrainsOutOfDepo.MultiSelect = false;
             this.lvTrainsOutOfDepo.Name = "lvTrainsOutOfDepo";
             this.lvTrainsOutOfDepo.OwnerDraw = true;
-            this.lvTrainsOutOfDepo.Size = new System.Drawing.Size(485, 418);
+            this.lvTrainsOutOfDepo.Size = new System.Drawing.Size(464, 286);
             this.lvTrainsOutOfDepo.TabIndex = 7;
             this.lvTrainsOutOfDepo.UseCompatibleStateImageBehavior = false;
             this.lvTrainsOutOfDepo.View = System.Windows.Forms.View.Details;
+            this.lvTrainsOutOfDepo.SelectedIndexChanged += new System.EventHandler(this.lvTrainsOutOfDepo_SelectedIndexChanged);
             // 
             // columnHeader1
             // 
@@ -184,7 +184,7 @@
             this.tbMainPanelTrainInfo.Depth = 0;
             this.tbMainPanelTrainInfo.HideSelection = true;
             this.tbMainPanelTrainInfo.Hint = "Информация о поезде";
-            this.tbMainPanelTrainInfo.Location = new System.Drawing.Point(10, 465);
+            this.tbMainPanelTrainInfo.Location = new System.Drawing.Point(10, 333);
             this.tbMainPanelTrainInfo.MaxLength = 32767;
             this.tbMainPanelTrainInfo.MouseState = MaterialSkin.MouseState.OUT;
             this.tbMainPanelTrainInfo.Name = "tbMainPanelTrainInfo";
@@ -195,7 +195,7 @@
             this.tbMainPanelTrainInfo.SelectionLength = 0;
             this.tbMainPanelTrainInfo.SelectionStart = 0;
             this.tbMainPanelTrainInfo.ShortcutsEnabled = true;
-            this.tbMainPanelTrainInfo.Size = new System.Drawing.Size(486, 100);
+            this.tbMainPanelTrainInfo.Size = new System.Drawing.Size(465, 232);
             this.tbMainPanelTrainInfo.TabIndex = 10;
             this.tbMainPanelTrainInfo.TabStop = false;
             this.tbMainPanelTrainInfo.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -213,7 +213,7 @@
             this.materialCard2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialCard2.Name = "materialCard2";
             this.materialCard2.Padding = new System.Windows.Forms.Padding(14);
-            this.materialCard2.Size = new System.Drawing.Size(485, 570);
+            this.materialCard2.Size = new System.Drawing.Size(506, 570);
             this.materialCard2.TabIndex = 11;
             // 
             // tbLogs
@@ -234,7 +234,7 @@
             this.tbLogs.SelectionLength = 0;
             this.tbLogs.SelectionStart = 0;
             this.tbLogs.ShortcutsEnabled = true;
-            this.tbLogs.Size = new System.Drawing.Size(464, 524);
+            this.tbLogs.Size = new System.Drawing.Size(486, 524);
             this.tbLogs.TabIndex = 8;
             this.tbLogs.TabStop = false;
             this.tbLogs.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -258,7 +258,7 @@
             this.tabPageBuild.Controls.Add(this.lbTrainsInDepo);
             this.tabPageBuild.Controls.Add(this.cardTrainConstruction);
             this.tabPageBuild.Controls.Add(this.materialCard1);
-            this.tabPageBuild.Controls.Add(this.materialButton1);
+            this.tabPageBuild.Controls.Add(this.btSendTrain);
             this.tabPageBuild.Controls.Add(this.materialLabel2);
             this.tabPageBuild.Controls.Add(this.materialLabel1);
             this.tabPageBuild.Controls.Add(this.tbConstructPanelTrainInfo);
@@ -284,6 +284,7 @@
             this.lbTrainsInDepo.SelectedItem = null;
             this.lbTrainsInDepo.Size = new System.Drawing.Size(415, 531);
             this.lbTrainsInDepo.TabIndex = 11;
+            this.lbTrainsInDepo.SelectedIndexChanged += new MaterialSkin.Controls.MaterialListBox.SelectedIndexChangedEventHandler(this.lbTrainsInDepo_SelectedIndexChanged);
             // 
             // cardTrainConstruction
             // 
@@ -300,12 +301,12 @@
             this.cardTrainConstruction.Controls.Add(this.tbTrainName);
             this.cardTrainConstruction.Depth = 0;
             this.cardTrainConstruction.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.cardTrainConstruction.Location = new System.Drawing.Point(427, 262);
+            this.cardTrainConstruction.Location = new System.Drawing.Point(610, 259);
             this.cardTrainConstruction.Margin = new System.Windows.Forms.Padding(14);
             this.cardTrainConstruction.MouseState = MaterialSkin.MouseState.HOVER;
             this.cardTrainConstruction.Name = "cardTrainConstruction";
             this.cardTrainConstruction.Padding = new System.Windows.Forms.Padding(14);
-            this.cardTrainConstruction.Size = new System.Drawing.Size(418, 314);
+            this.cardTrainConstruction.Size = new System.Drawing.Size(397, 314);
             this.cardTrainConstruction.TabIndex = 10;
             this.cardTrainConstruction.Visible = false;
             // 
@@ -313,7 +314,7 @@
             // 
             this.sliderWagonsFillness.Depth = 0;
             this.sliderWagonsFillness.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.sliderWagonsFillness.Location = new System.Drawing.Point(150, 265);
+            this.sliderWagonsFillness.Location = new System.Drawing.Point(137, 265);
             this.sliderWagonsFillness.MouseState = MaterialSkin.MouseState.HOVER;
             this.sliderWagonsFillness.Name = "sliderWagonsFillness";
             this.sliderWagonsFillness.Size = new System.Drawing.Size(250, 40);
@@ -327,7 +328,7 @@
             this.btCreateTrain.Depth = 0;
             this.btCreateTrain.HighEmphasis = true;
             this.btCreateTrain.Icon = null;
-            this.btCreateTrain.Location = new System.Drawing.Point(19, 265);
+            this.btCreateTrain.Location = new System.Drawing.Point(9, 265);
             this.btCreateTrain.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btCreateTrain.MouseState = MaterialSkin.MouseState.HOVER;
             this.btCreateTrain.Name = "btCreateTrain";
@@ -355,11 +356,11 @@
             this.cbCargoType.Hint = "Груз";
             this.cbCargoType.IntegralHeight = false;
             this.cbCargoType.ItemHeight = 43;
-            this.cbCargoType.Location = new System.Drawing.Point(216, 207);
+            this.cbCargoType.Location = new System.Drawing.Point(208, 207);
             this.cbCargoType.MaxDropDownItems = 4;
             this.cbCargoType.MouseState = MaterialSkin.MouseState.OUT;
             this.cbCargoType.Name = "cbCargoType";
-            this.cbCargoType.Size = new System.Drawing.Size(184, 49);
+            this.cbCargoType.Size = new System.Drawing.Size(179, 49);
             this.cbCargoType.StartIndex = 0;
             this.cbCargoType.TabIndex = 17;
             // 
@@ -367,7 +368,7 @@
             // 
             this.switchIsPassengerTrain.AutoSize = true;
             this.switchIsPassengerTrain.Depth = 0;
-            this.switchIsPassengerTrain.Location = new System.Drawing.Point(19, 217);
+            this.switchIsPassengerTrain.Location = new System.Drawing.Point(9, 219);
             this.switchIsPassengerTrain.Margin = new System.Windows.Forms.Padding(0);
             this.switchIsPassengerTrain.MouseLocation = new System.Drawing.Point(-1, -1);
             this.switchIsPassengerTrain.MouseState = MaterialSkin.MouseState.HOVER;
@@ -389,7 +390,7 @@
             this.tbWagonsCount.HideSelection = true;
             this.tbWagonsCount.Hint = "Кол-во вагонов";
             this.tbWagonsCount.LeadingIcon = null;
-            this.tbWagonsCount.Location = new System.Drawing.Point(216, 153);
+            this.tbWagonsCount.Location = new System.Drawing.Point(208, 153);
             this.tbWagonsCount.MaxLength = 32767;
             this.tbWagonsCount.MouseState = MaterialSkin.MouseState.OUT;
             this.tbWagonsCount.Name = "tbWagonsCount";
@@ -401,7 +402,7 @@
             this.tbWagonsCount.SelectionLength = 0;
             this.tbWagonsCount.SelectionStart = 0;
             this.tbWagonsCount.ShortcutsEnabled = true;
-            this.tbWagonsCount.Size = new System.Drawing.Size(184, 48);
+            this.tbWagonsCount.Size = new System.Drawing.Size(179, 48);
             this.tbWagonsCount.TabIndex = 15;
             this.tbWagonsCount.TabStop = false;
             this.tbWagonsCount.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -418,7 +419,7 @@
             this.tbTrainPower.HideSelection = true;
             this.tbTrainPower.Hint = "Мощность (кВт)";
             this.tbTrainPower.LeadingIcon = null;
-            this.tbTrainPower.Location = new System.Drawing.Point(19, 153);
+            this.tbTrainPower.Location = new System.Drawing.Point(9, 153);
             this.tbTrainPower.MaxLength = 32767;
             this.tbTrainPower.MouseState = MaterialSkin.MouseState.OUT;
             this.tbTrainPower.Name = "tbTrainPower";
@@ -445,7 +446,7 @@
             this.btGenerateTrainParams.Enabled = false;
             this.btGenerateTrainParams.HighEmphasis = true;
             this.btGenerateTrainParams.Icon = null;
-            this.btGenerateTrainParams.Location = new System.Drawing.Point(257, 103);
+            this.btGenerateTrainParams.Location = new System.Drawing.Point(244, 103);
             this.btGenerateTrainParams.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btGenerateTrainParams.MouseState = MaterialSkin.MouseState.HOVER;
             this.btGenerateTrainParams.Name = "btGenerateTrainParams";
@@ -462,7 +463,7 @@
             // 
             this.switchRandomConstructor.AutoSize = true;
             this.switchRandomConstructor.Depth = 0;
-            this.switchRandomConstructor.Location = new System.Drawing.Point(19, 103);
+            this.switchRandomConstructor.Location = new System.Drawing.Point(9, 104);
             this.switchRandomConstructor.Margin = new System.Windows.Forms.Padding(0);
             this.switchRandomConstructor.MouseLocation = new System.Drawing.Point(-1, -1);
             this.switchRandomConstructor.MouseState = MaterialSkin.MouseState.HOVER;
@@ -497,7 +498,7 @@
             this.tbTrainName.HideSelection = true;
             this.tbTrainName.Hint = "Название поезда";
             this.tbTrainName.LeadingIcon = null;
-            this.tbTrainName.Location = new System.Drawing.Point(17, 46);
+            this.tbTrainName.Location = new System.Drawing.Point(9, 46);
             this.tbTrainName.MaxLength = 32767;
             this.tbTrainName.MouseState = MaterialSkin.MouseState.OUT;
             this.tbTrainName.Name = "tbTrainName";
@@ -509,7 +510,7 @@
             this.tbTrainName.SelectionLength = 0;
             this.tbTrainName.SelectionStart = 0;
             this.tbTrainName.ShortcutsEnabled = true;
-            this.tbTrainName.Size = new System.Drawing.Size(383, 48);
+            this.tbTrainName.Size = new System.Drawing.Size(378, 48);
             this.tbTrainName.TabIndex = 1;
             this.tbTrainName.TabStop = false;
             this.tbTrainName.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -519,38 +520,18 @@
             // materialCard1
             // 
             this.materialCard1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.materialCard1.Controls.Add(this.materialButton2);
             this.materialCard1.Controls.Add(this.materialLabel4);
             this.materialCard1.Controls.Add(this.btDeleteTrain);
             this.materialCard1.Controls.Add(this.btAddTrain);
             this.materialCard1.Depth = 0;
             this.materialCard1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialCard1.Location = new System.Drawing.Point(427, 162);
+            this.materialCard1.Location = new System.Drawing.Point(427, 259);
             this.materialCard1.Margin = new System.Windows.Forms.Padding(14);
             this.materialCard1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialCard1.Name = "materialCard1";
             this.materialCard1.Padding = new System.Windows.Forms.Padding(14);
-            this.materialCard1.Size = new System.Drawing.Size(580, 95);
+            this.materialCard1.Size = new System.Drawing.Size(175, 149);
             this.materialCard1.TabIndex = 9;
-            // 
-            // materialButton2
-            // 
-            this.materialButton2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialButton2.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.materialButton2.Depth = 0;
-            this.materialButton2.HighEmphasis = true;
-            this.materialButton2.Icon = null;
-            this.materialButton2.Location = new System.Drawing.Point(216, 44);
-            this.materialButton2.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialButton2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialButton2.Name = "materialButton2";
-            this.materialButton2.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.materialButton2.Size = new System.Drawing.Size(154, 36);
-            this.materialButton2.TabIndex = 11;
-            this.materialButton2.Text = "Изменить поезд";
-            this.materialButton2.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.materialButton2.UseAccentColor = false;
-            this.materialButton2.UseVisualStyleBackColor = true;
             // 
             // materialLabel4
             // 
@@ -558,7 +539,7 @@
             this.materialLabel4.Depth = 0;
             this.materialLabel4.Font = new System.Drawing.Font("Roboto Medium", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.materialLabel4.FontType = MaterialSkin.MaterialSkinManager.fontType.H6;
-            this.materialLabel4.Location = new System.Drawing.Point(19, 14);
+            this.materialLabel4.Location = new System.Drawing.Point(28, 8);
             this.materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel4.Name = "materialLabel4";
             this.materialLabel4.Size = new System.Drawing.Size(130, 24);
@@ -567,22 +548,25 @@
             // 
             // btDeleteTrain
             // 
+            this.btDeleteTrain.AutoSize = false;
             this.btDeleteTrain.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btDeleteTrain.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
             this.btDeleteTrain.Depth = 0;
+            this.btDeleteTrain.Enabled = false;
             this.btDeleteTrain.HighEmphasis = true;
             this.btDeleteTrain.Icon = null;
-            this.btDeleteTrain.Location = new System.Drawing.Point(419, 44);
+            this.btDeleteTrain.Location = new System.Drawing.Point(13, 93);
             this.btDeleteTrain.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btDeleteTrain.MouseState = MaterialSkin.MouseState.HOVER;
             this.btDeleteTrain.Name = "btDeleteTrain";
             this.btDeleteTrain.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.btDeleteTrain.Size = new System.Drawing.Size(143, 36);
+            this.btDeleteTrain.Size = new System.Drawing.Size(152, 36);
             this.btDeleteTrain.TabIndex = 9;
             this.btDeleteTrain.Text = "Удалить поезд";
             this.btDeleteTrain.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.btDeleteTrain.UseAccentColor = false;
             this.btDeleteTrain.UseVisualStyleBackColor = true;
+            this.btDeleteTrain.Click += new System.EventHandler(this.btDeleteTrain_Click);
             // 
             // btAddTrain
             // 
@@ -591,7 +575,7 @@
             this.btAddTrain.Depth = 0;
             this.btAddTrain.HighEmphasis = true;
             this.btAddTrain.Icon = null;
-            this.btAddTrain.Location = new System.Drawing.Point(19, 44);
+            this.btAddTrain.Location = new System.Drawing.Point(13, 44);
             this.btAddTrain.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btAddTrain.MouseState = MaterialSkin.MouseState.HOVER;
             this.btAddTrain.Name = "btAddTrain";
@@ -604,24 +588,26 @@
             this.btAddTrain.UseVisualStyleBackColor = true;
             this.btAddTrain.Click += new System.EventHandler(this.btAddTrain_Click);
             // 
-            // materialButton1
+            // btSendTrain
             // 
-            this.materialButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialButton1.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.materialButton1.Depth = 0;
-            this.materialButton1.HighEmphasis = true;
-            this.materialButton1.Icon = null;
-            this.materialButton1.Location = new System.Drawing.Point(6, 585);
-            this.materialButton1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialButton1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialButton1.Name = "materialButton1";
-            this.materialButton1.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.materialButton1.Size = new System.Drawing.Size(161, 36);
-            this.materialButton1.TabIndex = 6;
-            this.materialButton1.Text = "Отправить поезд";
-            this.materialButton1.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.materialButton1.UseAccentColor = false;
-            this.materialButton1.UseVisualStyleBackColor = true;
+            this.btSendTrain.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btSendTrain.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.btSendTrain.Depth = 0;
+            this.btSendTrain.Enabled = false;
+            this.btSendTrain.HighEmphasis = true;
+            this.btSendTrain.Icon = null;
+            this.btSendTrain.Location = new System.Drawing.Point(6, 585);
+            this.btSendTrain.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btSendTrain.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btSendTrain.Name = "btSendTrain";
+            this.btSendTrain.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.btSendTrain.Size = new System.Drawing.Size(161, 36);
+            this.btSendTrain.TabIndex = 6;
+            this.btSendTrain.Text = "Отправить поезд";
+            this.btSendTrain.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btSendTrain.UseAccentColor = false;
+            this.btSendTrain.UseVisualStyleBackColor = true;
+            this.btSendTrain.Click += new System.EventHandler(this.btSendTrain_Click);
             // 
             // materialLabel2
             // 
@@ -668,7 +654,7 @@
             this.tbConstructPanelTrainInfo.SelectionLength = 0;
             this.tbConstructPanelTrainInfo.SelectionStart = 0;
             this.tbConstructPanelTrainInfo.ShortcutsEnabled = true;
-            this.tbConstructPanelTrainInfo.Size = new System.Drawing.Size(580, 100);
+            this.tbConstructPanelTrainInfo.Size = new System.Drawing.Size(580, 200);
             this.tbConstructPanelTrainInfo.TabIndex = 3;
             this.tbConstructPanelTrainInfo.TabStop = false;
             this.tbConstructPanelTrainInfo.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -723,7 +709,7 @@
         private MaterialSkin.Controls.MaterialLabel materialLabel3;
         private MaterialSkin.Controls.MaterialMultiLineTextBox2 tbLogs;
         private MaterialSkin.Controls.MaterialMultiLineTextBox2 tbMainPanelTrainInfo;
-        private MaterialSkin.Controls.MaterialButton materialButton1;
+        private MaterialSkin.Controls.MaterialButton btSendTrain;
         private MaterialSkin.Controls.MaterialButton btDeleteTrain;
         private MaterialSkin.Controls.MaterialButton btAddTrain;
         private MaterialSkin.Controls.MaterialCard materialCard1;
@@ -738,7 +724,6 @@
         private MaterialSkin.Controls.MaterialTextBox2 tbWagonsCount;
         private MaterialSkin.Controls.MaterialButton btCreateTrain;
         private MaterialSkin.Controls.MaterialComboBox cbCargoType;
-        private MaterialSkin.Controls.MaterialButton materialButton2;
         private MaterialSkin.Controls.MaterialSlider sliderWagonsFillness;
         private MaterialSkin.Controls.MaterialListBox lbTrainsInDepo;
         private MaterialSkin.Controls.MaterialCard materialCard3;

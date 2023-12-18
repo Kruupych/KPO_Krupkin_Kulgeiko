@@ -74,12 +74,12 @@ namespace RailwayTransport.Controller.Factories
             return new Train(loco, wagons, name);
         }
 
-        public Train CreateTrain(string name, int wagonsAmount, double power, int pessangersFillness)
+        public Train CreateTrain(string name, int wagonsAmount, double power, int pessengersFillness)
         {
             var wagonsFactory = new RandomWagonFactory();
             var loco = CreateLocomotive(power);
 
-            var wagons = wagonsFactory.CreatePassengerWagons(wagonsAmount, pessangersFillness);
+            var wagons = wagonsFactory.CreatePassengerWagons(wagonsAmount, pessengersFillness);
 
             return new Train(loco, wagons, name);
         }

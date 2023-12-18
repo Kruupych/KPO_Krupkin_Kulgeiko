@@ -54,6 +54,16 @@ namespace RailwayTransport.Controller
             return _trainFactory.CreateTrain();
         }
 
+        public Train CreateTrain(string name, int wagonsAmount, double power, int pessengersFillness)
+        {
+            return _trainFactory.CreateTrain(name, wagonsAmount, power, pessengersFillness);
+        }
+
+        public Train CreateTrain(string name, int wagonsAmount, double power, int loadPercentage, CargoWagon.Resource resource)
+        {
+            return _trainFactory.CreateTrain(name, wagonsAmount, power, loadPercentage, resource);
+        }
+
         public List<Train> CreateTrains(int amount)
         {
             var trains = new List<Train>();
