@@ -68,7 +68,6 @@
             buttonClearW = new Guna.UI2.WinForms.Guna2Button();
             buttonLoadW = new Guna.UI2.WinForms.Guna2Button();
             TimeNow = new Label();
-            timer1 = new System.Windows.Forms.Timer(components);
             timer2 = new System.Windows.Forms.Timer(components);
             comboFreeWagons = new ComboBox();
             label3 = new Label();
@@ -84,6 +83,8 @@
             radioInfoFreeWagon = new RadioButton();
             radioInfoWagon = new RadioButton();
             buttonInfo = new Guna.UI2.WinForms.Guna2Button();
+            labelTrainOnStationADD = new Label();
+            labelTrainName = new Label();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             groupBox3.SuspendLayout();
@@ -284,11 +285,6 @@
             TimeNow.Size = new Size(0, 24);
             TimeNow.TabIndex = 16;
             // 
-            // timer1
-            // 
-            timer1.Interval = 5000;
-            timer1.Tick += timer1_Tick;
-            // 
             // timer2
             // 
             timer2.Interval = 500;
@@ -473,12 +469,34 @@
             buttonInfo.Text = "ИНФО";
             buttonInfo.Click += buttonInfo_Click;
             // 
+            // labelTrainOnStationADD
+            // 
+            labelTrainOnStationADD.AutoSize = true;
+            labelTrainOnStationADD.Font = new Font("Consolas", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            labelTrainOnStationADD.Location = new Point(415, 50);
+            labelTrainOnStationADD.Name = "labelTrainOnStationADD";
+            labelTrainOnStationADD.Size = new Size(214, 24);
+            labelTrainOnStationADD.TabIndex = 26;
+            labelTrainOnStationADD.Text = "Поезд на станции:";
+            labelTrainOnStationADD.Visible = false;
+            // 
+            // labelTrainName
+            // 
+            labelTrainName.AutoSize = true;
+            labelTrainName.Font = new Font("Consolas", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            labelTrainName.Location = new Point(713, 50);
+            labelTrainName.Name = "labelTrainName";
+            labelTrainName.Size = new Size(0, 24);
+            labelTrainName.TabIndex = 27;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(255, 192, 128);
             ClientSize = new Size(1200, 600);
+            Controls.Add(labelTrainName);
+            Controls.Add(labelTrainOnStationADD);
             Controls.Add(groupBox3);
             Controls.Add(pictureBox1);
             Controls.Add(groupBox1);
@@ -504,6 +522,7 @@
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Form1";
             Text = "Form1";
+            FormClosed += Form1_FormClosed;
             Load += Form1_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
@@ -532,7 +551,6 @@
         private Guna.UI2.WinForms.Guna2Button buttonLoadW;
         private Guna.UI2.WinForms.Guna2Button buttonDelW;
         private Label TimeNow;
-        private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Timer timer2;
         private Label label4;
         private Label label3;
@@ -548,5 +566,7 @@
         private RadioButton radioInfoFreeWagon;
         private RadioButton radioInfoWagon;
         private Guna.UI2.WinForms.Guna2Button buttonInfo;
+        private Label labelTrainName;
+        private Label labelTrainOnStationADD;
     }
 }

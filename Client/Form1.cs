@@ -1,4 +1,5 @@
 using System.Configuration;
+using System.Management;
 using RailwayTransport;
 using RailwayTransport.Controller.Network;
 namespace Client
@@ -10,34 +11,30 @@ namespace Client
         public Dictionary<string, Train> Trains;
         public Dictionary<string, IWagon> Wagons;
         public Dictionary<string, IWagon> WagonsOnStation;
-        //Network connection;
         bool isArrived;
         Train currentTrain;
         StationClient client;
         public Form1()
         {
             InitializeComponent();
-            client = new StationClient("127.0.0.1");
+            client = new StationClient("195.2.80.2");
             Form2 authorization = new Form2(client);
             mode = "null";
             authorization.ShowDialog(this);
             client.OnAvailableTrainsUpdated += Client_OnAvailableTrainsUpdated;
-            timer1.Start();
             timer2.Start();
-            //connection = new Network();
             Trains = new Dictionary<string, Train>();
             Wagons = new Dictionary<string, IWagon>();
             WagonsOnStation = new Dictionary<string, IWagon>();
             client.RequestAvailableTrains();
-            //regenerateTrains();
             radioWagon.Checked = true;
             radioInfoWagon.Checked = true;
-            isArrived= false;
+            isArrived = false;
         }
 
         private void Client_OnAvailableTrainsUpdated(object sender, AvailableTrainsUpdateEventArgs e)
         {
-            
+
             regenerateTrains(e.Trains);
         }
 
@@ -47,8 +44,8 @@ namespace Client
             {
                 case "null":
                     {
-                        this.labelName.Text = mode;
-                        break;
+                        this.Close();
+                        return;
                     }
                 default:
                     {
@@ -58,13 +55,10 @@ namespace Client
             }
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-          // regenerateTrains();
-        }
+
         private void onUpdateFreeWagon()
         {
-            if (comboFreeWagons.Items != null  && comboFreeWagons.Items.Count!=0)
+            if (comboFreeWagons.Items != null && comboFreeWagons.Items.Count != 0)
             {
                 comboFreeWagons.SelectedIndex = 0;
             }
@@ -136,7 +130,7 @@ namespace Client
                 regenerateFreeWagons();
             }
 
-            
+
         }
 
         private void regenerateWagons()
@@ -150,7 +144,7 @@ namespace Client
                 return;
             }
             Wagons.Clear();
-            currentTrain= Trains[comboTrains.SelectedItem.ToString()];
+            currentTrain = Trains[comboTrains.SelectedItem.ToString()];
             List<IWagon> updatedWagons = new List<IWagon>();
             updatedWagons.AddRange(currentTrain.Wagons);
             int i = 1;
@@ -168,8 +162,6 @@ namespace Client
         private void regenerateTrains(List<Train> updatedTrains)
         {
             Trains.Clear();
-            //List<Train> updatedTrains = new List<Train>();
-            //updatedTrains.AddRange(connection.getTrainsList());
             int trainCount = updatedTrains.Count;
             for (int i = 1; i <= trainCount; i++)
             {
@@ -181,12 +173,12 @@ namespace Client
                 comboTrains.Items.Clear();
                 comboTrains.Items.AddRange(Trains.Keys.ToArray());
             });
-            
+
         }
         private void refreshTrainBeforeSending()
         {
-            if(currentTrain != null) 
-            {                 
+            if (currentTrain != null)
+            {
                 currentTrain.Wagons.Clear();
                 currentTrain.AddWagons(Wagons.Values);
             }
@@ -253,6 +245,8 @@ namespace Client
         {
             isArrived = true;
             client.TrainArrived(currentTrain);
+            labelTrainOnStationADD.Visible = true;
+            labelTrainName.Text = currentTrain.Name;
             //перестать запрашивать доступные поезда
             //поезд блокируется для изменения
         }
@@ -262,6 +256,8 @@ namespace Client
             refreshTrainBeforeSending();
             client.TrainDeparted(currentTrain);
             isArrived = false;
+            labelTrainOnStationADD.Visible = false;
+            labelTrainName.Text = "";
             //поезд осовобождается от блокировки
         }
 
@@ -289,12 +285,12 @@ namespace Client
             comboFreeWagons.Items.Add(myKey);
             regenerateFreeWagons();
             onUpdateWagon();
-            
+
         }
 
         private void buttonLink_Click(object sender, EventArgs e)
         {
-            if (comboFreeWagons.Items == null || comboFreeWagons.Items.Count == 0|| !isArrived)
+            if (comboFreeWagons.Items == null || comboFreeWagons.Items.Count == 0 || !isArrived)
             {
                 return;
             }
@@ -317,13 +313,13 @@ namespace Client
             {
                 MessageBox.Show(ex.Message);
             }
-            
-             
+
+
         }
 
         private void buttonDelW_Click(object sender, EventArgs e)
         {
-            if(comboFreeWagons.Items==null || comboFreeWagons.Items.Count == 0)
+            if (comboFreeWagons.Items == null || comboFreeWagons.Items.Count == 0)
             {
                 return;
             }
@@ -357,7 +353,18 @@ namespace Client
             textMain.Clear();
         }
 
-        
+        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            string processName = "Client.exe";
+            ManagementObjectSearcher searcher = new ManagementObjectSearcher("SELECT * FROM Win32_Process WHERE Name='" + processName + "'");
+            ManagementObjectCollection processList = searcher.Get();
+
+            // Проходим по списку процессов и завершаем их
+            foreach (ManagementObject obj in processList)
+            {
+                obj.InvokeMethod("Terminate", null);
+            }
+        }
     }
     public class Authorization
     {
