@@ -80,7 +80,7 @@ namespace Client
             else
             {
                 pw = (PassengerWagon)currentWagon;
-                pw.LoadPerc(trackCarPer.Value);
+                pw.Load(trackCarPer.Value);
                 currentWagon = pw;
             }
             this.Close();

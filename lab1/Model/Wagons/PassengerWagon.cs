@@ -68,6 +68,7 @@ namespace RailwayTransport
         {
             LoadPercentage = loadPercentage;
             int passengersCount = Payload * loadPercentage / 100;
+            Weight = EmptyWeight;
             Weight += passengersCount * 0.07d;
         }
 

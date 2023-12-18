@@ -247,7 +247,8 @@ namespace Server
         private void btSendTrain_Click(object sender, EventArgs e)
         {
             _trainsInPath.Add(_depo[lbTrainsInDepo.SelectedIndex]);
-            lvTrainsOutOfDepo.Items.Add(new ListViewItem(_depo[lbTrainsInDepo.SelectedIndex].Name, _depo[lbTrainsInDepo.SelectedIndex].Name, lvTrainsOutOfDepo.Groups["path"]));
+            var item = lvTrainsOutOfDepo.Items.Add(new ListViewItem(_depo[lbTrainsInDepo.SelectedIndex].Name, lvTrainsOutOfDepo.Groups["path"]));
+            item.Name = _depo[lbTrainsInDepo.SelectedIndex].Name;
             LogEvent($"Поезд \"{_depo[lbTrainsInDepo.SelectedIndex].Name}\" убыл с депо");
             RemoveTrainFromDepo(lbTrainsInDepo.SelectedIndex);
             _depoServer.BroadcastTrains(_trainsInPath);

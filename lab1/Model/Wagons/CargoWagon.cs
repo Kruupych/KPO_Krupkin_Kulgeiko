@@ -86,6 +86,7 @@ namespace RailwayTransport
         {
             ResourceType = resource;
             LoadPercentage = loadPercentage = loadPercentage > 100? 100 : loadPercentage < 0 ? 0 : loadPercentage;
+            Weight = EmptyWeight;
             Weight += Payload * loadPercentage / 100d;
         }
 
