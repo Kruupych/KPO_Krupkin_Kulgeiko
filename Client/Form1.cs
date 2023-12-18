@@ -1,5 +1,6 @@
 using System.Configuration;
 using RailwayTransport;
+using RailwayTransport.Controller.Network;
 namespace Client
 {
     public partial class Form1 : Form
@@ -9,23 +10,34 @@ namespace Client
         public Dictionary<string, Train> Trains;
         public Dictionary<string, IWagon> Wagons;
         public Dictionary<string, IWagon> WagonsOnStation;
-        Network connection;
+        //Network connection;
         Train currentTrain;
+        StationClient client;
         public Form1()
         {
             InitializeComponent();
-            Form2 authorization = new Form2();
+            client = new StationClient("195.2.80.2");
+            Form2 authorization = new Form2(client);
             mode = "null";
             authorization.ShowDialog(this);
+            client.OnAvailableTrainsUpdated += Client_OnAvailableTrainsUpdated;
             timer1.Start();
             timer2.Start();
-            connection = new Network();
+            //connection = new Network();
             Trains = new Dictionary<string, Train>();
             Wagons = new Dictionary<string, IWagon>();
             WagonsOnStation = new Dictionary<string, IWagon>();
-            regenerateTrains();
+            client.RequestAvailableTrains();
+            //regenerateTrains();
             radioWagon.Checked = true;
             radioInfoWagon.Checked = true;
+
+        }
+
+        private void Client_OnAvailableTrainsUpdated(object sender, AvailableTrainsUpdateEventArgs e)
+        {
+            
+            regenerateTrains(e.Trains);
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -47,7 +59,7 @@ namespace Client
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            regenerateTrains();
+          // regenerateTrains();
         }
         private void onUpdateFreeWagon()
         {
@@ -152,11 +164,11 @@ namespace Client
             comboFreeWagons.Items.AddRange(WagonsOnStation.Keys.ToArray());
             onUpdateFreeWagon();
         }
-        private void regenerateTrains()
+        private void regenerateTrains(List<Train> updatedTrains)
         {
             Trains.Clear();
-            List<Train> updatedTrains = new List<Train>();
-            updatedTrains.AddRange(connection.getTrainsList());
+            //List<Train> updatedTrains = new List<Train>();
+            //updatedTrains.AddRange(connection.getTrainsList());
             int trainCount = updatedTrains.Count;
             for (int i = 1; i <= trainCount; i++)
             {
@@ -234,14 +246,15 @@ namespace Client
 
         private void buttonGetTrain_Click(object sender, EventArgs e)
         {
-            connection.TrainArrived(currentTrain);
+            
+            client.TrainArrived(currentTrain);
             //поезд блокируется для изменения
         }
 
         private void buttonSendTrain_Click(object sender, EventArgs e)
         {
             refreshTrainBeforeSending();
-            connection.SendTrain(currentTrain);
+            client.TrainDeparted(currentTrain);
             //поезд осовобождается от блокировки
         }
 
