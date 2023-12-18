@@ -168,11 +168,16 @@ namespace Client
         }
         private void refreshTrainBeforeSending()
         {
-
+            if(currentTrain != null) 
+            {                 
+                currentTrain.Wagons.Clear();
+                currentTrain.AddWagons(Wagons.Values);
+            }
         }
 
         private void comboTrains_Click(object sender, EventArgs e)
         {
+            refreshTrainBeforeSending();
             regenerateWagons();
             comboWagons.Items.Clear();
             comboWagons.Items.AddRange(Wagons.Keys.ToArray());
@@ -235,6 +240,7 @@ namespace Client
 
         private void buttonSendTrain_Click(object sender, EventArgs e)
         {
+            refreshTrainBeforeSending();
             connection.SendTrain(currentTrain);
             //поезд осовобождается от блокировки
         }
