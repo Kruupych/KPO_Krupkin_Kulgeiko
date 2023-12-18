@@ -9,7 +9,7 @@ namespace RailwayTransport.Controller.Network
 {
     public class AvailableTrainsUpdateEventArgs : EventArgs
     {
-        List<Train> Trains { get; set; }
+        public List<Train> Trains { get; set; }
 
         public AvailableTrainsUpdateEventArgs(List<Train> trains)
         {
@@ -35,6 +35,7 @@ namespace RailwayTransport.Controller.Network
             this.serverIp = serverIp;
 
             tcpClient = new TcpClient();
+            tcpClient.Client.ReceiveBufferSize = 1024000;
         }
 
         public async Task Connect()
@@ -88,7 +89,7 @@ namespace RailwayTransport.Controller.Network
             string msg = $"{Commands.AUTH_REQUEST}{station};{password}";
             SendData(msg);
 
-            while (authAnswerRecieved) await Task.Delay(100);
+            while (!authAnswerRecieved) await Task.Delay(100);
 
             authAnswerRecieved = false;
             if (authAnswer)

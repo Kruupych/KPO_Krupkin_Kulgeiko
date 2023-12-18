@@ -32,6 +32,7 @@ namespace RailwayTransport.Controller.Network
         public DepoServer()
         {
             tcpListener = new TcpListener(IPAddress.Any, 33331);
+            tcpListener.Server.ReceiveBufferSize = 1024000;
         }
 
         public async Task Start()
