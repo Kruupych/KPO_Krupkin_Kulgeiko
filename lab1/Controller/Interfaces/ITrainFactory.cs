@@ -12,7 +12,7 @@ namespace RailwayTransport.Controller.Interfaces
 
         Train CreateTrain(string name, int wagonsAmount, double power, int loadPercentage, CargoWagon.Resource resource);
 
-        Train CreateTrain(string name, int wagonsAmount, double power, int pessangersFillness);
+        Train CreateTrain(string name, int wagonsAmount, double power, int pessengersFillness);
 
         Train CreateTrain(int loadPercentage);
         Train CreateTrain();

@@ -91,9 +91,9 @@ namespace RailwayTransport
 
         public override string ToString()
         {
-            return $"Грузовой вагон, везущий {ResourceType.ToString()}" +
-                $"\nДлина: {Length} метров" +
-                $"\nВес: {Weight.ToString("f2")} тонн";
+            return $"\r\nГрузовой вагон, везущий {ResourceType.ToString()}" +
+                $"\r\nДлина: {Length} метров" +
+                $"\r\tВес: {Weight.ToString("f2")} тонн";
         }
 
         ~CargoWagon()

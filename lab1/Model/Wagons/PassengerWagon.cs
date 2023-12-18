@@ -67,7 +67,8 @@ namespace RailwayTransport
         public void Load(int loadPercentage)
         {
             LoadPercentage = loadPercentage;
-            Weight += loadPercentage * Payload * 0.07d;
+            int passengersCount = Payload * loadPercentage / 100;
+            Weight += passengersCount * 0.07d;
         }
 
         public void LoadPerc(int loadPercentage)
@@ -80,9 +81,9 @@ namespace RailwayTransport
 
         public override string ToString()
         {
-            return $"Пассажирский вагон, везущий {PassengersCount} пассажиров" +
-                $"\nДлина: {Length} метров" +
-                $"\nВес: {Weight.ToString("f2")} тонн";
+            return $"\r\nПассажирский вагон, везущий {PassengersCount} пассажиров" +
+                $"\r\nДлина: {Length} метров" +
+                $"\r\tВес: {Weight.ToString("f2")} тонн";
         }
 
         ~PassengerWagon()

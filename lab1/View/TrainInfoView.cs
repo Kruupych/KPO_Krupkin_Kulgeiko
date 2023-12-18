@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace RailwayTransport.View
 {
-    internal class TrainInfoView
+    public class TrainInfoView
     {
         public static void ShowTrainInfo(Train train)
         {
@@ -45,11 +45,13 @@ namespace RailwayTransport.View
         public static string GetTrainInfo(Train train)
         {
             var sb = new StringBuilder();
-            sb.AppendLine("\nДлина поезда: " + train.Length + "м");
-            sb.AppendLine("\nСамый длинный вагон: " + train.FindLongestWagon().ToString());
-            sb.AppendLine("\nСамый короткий вагон: " + train.FindShortestWagon().ToString());
-            sb.AppendLine("\nВес поезда: " + train.TotalWeight.ToString("f2") + " т");
-            sb.AppendLine("\nМаксимальная скорость: " + train.MaxSpeed.ToString("f1") + " км/ч");
+            sb.AppendLine("Название поезда: " + train.Name);
+            sb.AppendLine("Кол-во вагонов: " + train.Wagons.Count);
+            sb.AppendLine("Длина поезда: " + train.Length + "м");
+            sb.AppendLine("\r\nСамый длинный вагон: " + train.FindLongestWagon().ToString());
+            sb.AppendLine("\r\nСамый короткий вагон: " + train.FindShortestWagon().ToString());
+            sb.AppendLine("\r\nВес поезда: " + train.TotalWeight.ToString("f2") + " т");
+            sb.AppendLine("Максимальная скорость: " + train.MaxSpeed.ToString("f1") + " км/ч");
 
             return sb.ToString();
         }
